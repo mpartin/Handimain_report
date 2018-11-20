@@ -20,15 +20,21 @@
   </style>
   <!-- TODO: Missing CoffeeScript 2 -->
 
+
+  <script type="text/javascript" src="./Images/caca.js"></script>
   <script type="text/javascript">
 
 
     
 function demoFromHTML() {
     var pdf = new jsPDF('p', 'pt', 'letter');
-    // source can be HTML-formatted string, or a reference
+
+        // source can be HTML-formatted string, or a reference
     // to an actual DOM element from which the text will be scraped.
     source = $('#customers')[0];
+
+    pdf.addImage(myimage, 'JPEG', 15, 40, 180, 160);
+
 
     // we support special element handlers. Register them with jQuery-style 
     // ID selector for either ID or node name. ("#iAmID", "div", "span" etc.)
