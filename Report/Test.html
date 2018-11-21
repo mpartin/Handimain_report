@@ -23,6 +23,14 @@
 
   <script type="text/javascript">
 
+function FileInput() {
+  var oFiles = document.getElementById("uploadInput").files;
+  var nFiles = oFiles.length;
+  console.log(oFiles[0]);
+
+  document.getElementById("fileNum").innerHTML = nFiles;
+}
+
 function demoFromHTML() {
 
     var pdf = new jsPDF('p', 'pt', 'letter');
@@ -74,9 +82,11 @@ function demoFromHTML() {
 </head>
 <body>
   <div id="customers">
+
     <div class="form-control" id="input">
             <label><div id="NameHide">Name :</label>
             <input type="text" name="name" id="name" autocomplete="off" required>
+            <p><input id="uploadInput" type="file" name="myFiles" onchange="FileInput();" multiple> selected files: <span id="fileNum">0</span></p>
     </div>     
     <table id="tab_customers" class="table table-striped">
         <colgroup>
@@ -135,6 +145,7 @@ function demoFromHTML() {
 
   
   <script>
+    
     // tell the embed parent frame the height of the content
     if (window.parent && window.parent.parent){
       window.parent.parent.postMessage(["resultsFrame", {
