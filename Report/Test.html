@@ -21,20 +21,18 @@
   <!-- TODO: Missing CoffeeScript 2 -->
 
 
-  <script type="text/javascript" src="./Images/caca.js"></script>
   <script type="text/javascript">
 
-
-    
 function demoFromHTML() {
+
     var pdf = new jsPDF('p', 'pt', 'letter');
 
-        // source can be HTML-formatted string, or a reference
+    // source can be HTML-formatted string, or a reference
     // to an actual DOM element from which the text will be scraped.
     source = $('#customers')[0];
+        //pdf.addImage(myimage, 'JPEG', 15, 40, 180, 160);
 
-    pdf.addImage(myimage, 'JPEG', 15, 40, 180, 160);
-
+    document.getElementById("NameHide").innerHTML="Name: "+document.getElementById("name").value;
 
     // we support special element handlers. Register them with jQuery-style 
     // ID selector for either ID or node name. ("#iAmID", "div", "span" etc.)
@@ -76,6 +74,10 @@ function demoFromHTML() {
 </head>
 <body>
   <div id="customers">
+    <div class="form-control" id="input">
+            <label><div id="NameHide">Name :</label>
+            <input type="text" name="name" id="name" autocomplete="off" required>
+    </div>     
     <table id="tab_customers" class="table table-striped">
         <colgroup>
             <col width="20%">
@@ -124,8 +126,13 @@ function demoFromHTML() {
             </tr>
         </tbody>
     </table>
+    <div id="Image">
+            <img src="./Images/caca.jpg" alt="Caca" width="520" height="735">
+    </div>        
+    <button onclick="javascript:demoFromHTML();">PDF</button>
+
 </div>
-<button onclick="javascript:demoFromHTML();">PDF</button>
+
   
   <script>
     // tell the embed parent frame the height of the content
