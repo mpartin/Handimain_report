@@ -18,6 +18,12 @@
   <style type="text/css">
     
   </style>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.10.1/bootstrap-table.min.js"></script>
+<script src='./Test.JSON'></script>
+  
   <!-- TODO: Missing CoffeeScript 2 -->
 
 
@@ -42,10 +48,10 @@ function readURL(input, id_image) {
     }
 
 
-function FileInput(id_image) {
-  var oFiles = document.getElementById("uploadInput").files;
+function FileInput(id_input) {
+  var oFiles = document.getElementById(id_input).files;
   var nFiles = oFiles.length;
-  readURL(oFiles, id_image);
+  readURL(oFiles, id_input);
 //   console.log(oFiles);
 
   document.getElementById("fileNum").innerHTML = nFiles;
@@ -109,61 +115,25 @@ function demoFromHTML() {
     </div>
 
     <div>
-        <p><input id="uploadInput" type="file" name="myFiles" onchange="FileInput('#image1');" multiple></p>
+        <p><input id='#image1' type="file" name="myFiles" onchange="FileInput('#image1');" multiple></p>
         <img id="image1" src="#" alt="Image 1"/>
     </div>
     
-    <table id="tab_customers" class="table table-striped">
-        <colgroup>
-            <col width="20%">
-                <col width="20%">
-                    <col width="20%">
-                        <col width="20%">
-        </colgroup>
-        <thead>
-            <tr class="warning">
-                <th>Country</th>
-                <th>Population</th>
-                <th>Date</th>
-                <th>Age</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>Chinna</td>
-                <td>1,363,480,000</td>
-                <td>March 24, 2014</td>
-                <td>19.1</td>
-            </tr>
-            <tr>
-                <td>India</td>
-                <td>1,241,900,000</td>
-                <td>March 24, 2014</td>
-                <td>17.4</td>
-            </tr>
-            <tr>
-                <td>United States</td>
-                <td>317,746,000</td>
-                <td>March 24, 2014</td>
-                <td>4.44</td>
-            </tr>
-            <tr>
-                <td>Indonesia</td>
-                <td>249,866,000</td>
-                <td>July 1, 2013</td>
-                <td>3.49</td>
-            </tr>
-            <tr>
-                <td>Brazil</td>
-                <td>201,032,714</td>
-                <td>July 1, 2013</td>
-                <td>2.81</td>
-            </tr>
-        </tbody>
-    </table>
+    <div>
+        <p><input id='#table1' type="file" name="myFiles" onchange="FileInput('#table1');" multiple></p>
+        <table id="table1" src="#" data-height="1000">
+            <thead>
+                <tr>
+                    <th data-field="id">Item ID</th>
+                    <th data-field="name">Item Name</th>
+                    <th data-field="price">Item Price</th>
+                </tr>
+            </thead>
+        </table>
+    </div>
 
     <div>
-        <p><input id="uploadInput" type="file" name="myFiles" onchange="FileInput('#image2');" multiple></p>
+        <p><input id='#image2' type="file" name="myFiles" onchange="FileInput('#image2');" multiple></p>
         <img id="image2" src="#" alt="Image 2"/>
     </div>
     
