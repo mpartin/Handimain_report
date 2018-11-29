@@ -22,11 +22,31 @@
 
 
   <script type="text/javascript">
+// ------------------ //
+// ---- FUNCTION ---- //
+// ------------------ //
 
-function FileInput() {
+function readURL(input, id_image) {
+        if (input[0]) {
+            var reader = new FileReader();
+
+            reader.onload = function (e) {
+                $(id_image)
+                    .attr('src', e.target.result)
+                    .width(520)
+                    .height(730);
+            };
+            
+            reader.readAsDataURL(input[0]);
+        }
+    }
+
+
+function FileInput(id_image) {
   var oFiles = document.getElementById("uploadInput").files;
   var nFiles = oFiles.length;
-  console.log(oFiles[0]);
+  readURL(oFiles, id_image);
+//   console.log(oFiles);
 
   document.getElementById("fileNum").innerHTML = nFiles;
 }
@@ -86,8 +106,13 @@ function demoFromHTML() {
     <div class="form-control" id="input">
             <label><div id="NameHide">Name :</label>
             <input type="text" name="name" id="name" autocomplete="off" required>
-            <p><input id="uploadInput" type="file" name="myFiles" onchange="FileInput();" multiple> selected files: <span id="fileNum">0</span></p>
-    </div>     
+    </div>
+
+    <div>
+        <p><input id="uploadInput" type="file" name="myFiles" onchange="FileInput('#image1');" multiple></p>
+        <img id="image1" src="#" alt="Image 1"/>
+    </div>
+    
     <table id="tab_customers" class="table table-striped">
         <colgroup>
             <col width="20%">
@@ -136,10 +161,15 @@ function demoFromHTML() {
             </tr>
         </tbody>
     </table>
-    <div id="Image">
-            <img src="./Images/caca.jpg" alt="Caca" width="520" height="735">
-    </div>        
+
+    <div>
+        <p><input id="uploadInput" type="file" name="myFiles" onchange="FileInput('#image2');" multiple></p>
+        <img id="image2" src="#" alt="Image 2"/>
+    </div>
+    
+    <div>
     <button onclick="javascript:demoFromHTML();">PDF</button>
+    </div>
 
 </div>
 
