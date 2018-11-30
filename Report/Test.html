@@ -22,7 +22,7 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/js/bootstrap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.10.1/bootstrap-table.min.js"></script>
-<script src='./Test.JSON'></script>
+<!-- <script src='./Test.JSON'></script> -->
   
   <!-- TODO: Missing CoffeeScript 2 -->
 
@@ -32,30 +32,40 @@
 // ---- FUNCTION ---- //
 // ------------------ //
 
-function readURL(input, id_image) {
-        if (input[0]) {
-            var reader = new FileReader();
+function ImageInput(id_input) {
 
-            reader.onload = function (e) {
-                $(id_image)
-                    .attr('src', e.target.result)
-                    .width(520)
-                    .height(730);
-            };
-            
-            reader.readAsDataURL(input[0]);
-        }
+    var input = document.getElementById(id_input).files;
+
+    if (input[0]) {
+        var reader = new FileReader();
+
+        reader.onload = function (e) {
+            $(id_input)
+                .attr('src', e.target.result)
+                .width(520)
+                .height(730);
+        };
+        reader.readAsDataURL(input[0]);
     }
-
-
-function FileInput(id_input) {
-  var oFiles = document.getElementById(id_input).files;
-  var nFiles = oFiles.length;
-  readURL(oFiles, id_input);
-//   console.log(oFiles);
-
-  document.getElementById("fileNum").innerHTML = nFiles;
 }
+
+function JSONopenFile(event) {
+    var input = event.target;
+    
+    var reader = new FileReader();
+    reader.onload = function(){
+        var text = reader.result;
+        var obj = JSON.parse(text);
+        console.log('text',obj);
+        obj.forEach(function(item){
+            $('tbody').append('<tr><td>'+item.id+'</td><td>'+item["name"]+'</td><td>'+item.price+'</td></tr>')
+});
+    };
+    reader.readAsText(input.files[0]);
+    
+  }
+
+
 
 function demoFromHTML() {
 
@@ -115,13 +125,13 @@ function demoFromHTML() {
     </div>
 
     <div>
-        <p><input id='#image1' type="file" name="myFiles" onchange="FileInput('#image1');" multiple></p>
+        <p><input id='#image1' type="file" name="myFiles" onchange="ImageInput('#image1');" multiple></p>
         <img id="image1" src="#" alt="Image 1"/>
     </div>
     
     <div>
-        <p><input id='#table1' type="file" name="myFiles" onchange="FileInput('#table1');" multiple></p>
-        <table id="table1" src="#" data-height="1000">
+        <p><input id='#table' type="file" name="myFiles" onchange="JSONopenFile(event);" multiple></p>
+        <table id="table" src="#">
             <thead>
                 <tr>
                     <th data-field="id">Item ID</th>
@@ -129,11 +139,14 @@ function demoFromHTML() {
                     <th data-field="price">Item Price</th>
                 </tr>
             </thead>
+            <tbody>
+
+            </tbody>
         </table>
     </div>
 
     <div>
-        <p><input id='#image2' type="file" name="myFiles" onchange="FileInput('#image2');" multiple></p>
+        <p><input id='#image2' type="file" name="myFiles" onchange="ImageInput('#image2');" multiple></p>
         <img id="image2" src="#" alt="Image 2"/>
     </div>
     
