@@ -19,15 +19,8 @@
     
   </style>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/js/bootstrap.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.10.1/bootstrap-table.min.js"></script>
-<!-- <script src='./Test.JSON'></script> -->
-  
-  <!-- TODO: Missing CoffeeScript 2 -->
-
-
   <script type="text/javascript">
+
 // ------------------ //
 // ---- FUNCTION ---- //
 // ------------------ //
@@ -43,7 +36,7 @@ function ImageInput(id_input) {
             $(id_input)
                 .attr('src', e.target.result)
                 .width(520)
-                .height(730);
+                .height(650);
         };
         reader.readAsDataURL(input[0]);
     }
@@ -56,11 +49,13 @@ function JSONopenFile(event) {
     reader.onload = function(){
         var text = reader.result;
         var obj = JSON.parse(text);
-        console.log('text',obj);
+        // console.log('text',obj);
         obj.forEach(function(item){
-            $('tbody').append('<tr><td>'+item.id+'</td><td>'+item["name"]+'</td><td>'+item.price+'</td></tr>')
-});
+            $('#table1 > tbody').append('<tr><td>'+item.id+'</td><td>'+item["name"]+'</td><td>'+item.price+'</td></tr>')
+            $('#table2 > tbody').append('<tr><td>'+item.id+'</td><td>'+item["name"]+'</td><td>'+item.price+'</td></tr>')
+        });
     };
+
     reader.readAsText(input.files[0]);
     
   }
@@ -125,13 +120,13 @@ function demoFromHTML() {
     </div>
 
     <div>
-        <p><input id='#image1' type="file" name="myFiles" onchange="ImageInput('#image1');" multiple></p>
+        <p><input id='#image1' type="file" name="myFiles" onchange="ImageInput('#image1');"></p>
         <img id="image1" src="#" alt="Image 1"/>
     </div>
-    
+
     <div>
-        <p><input id='#table' type="file" name="myFiles" onchange="JSONopenFile(event);" multiple></p>
-        <table id="table" src="#">
+        <p><input id='#table1' type="file" name="myFiles" onchange="JSONopenFile(event);"></p>
+        <table id="table1" src="#">
             <thead>
                 <tr>
                     <th data-field="id">Item ID</th>
@@ -146,9 +141,25 @@ function demoFromHTML() {
     </div>
 
     <div>
-        <p><input id='#image2' type="file" name="myFiles" onchange="ImageInput('#image2');" multiple></p>
+        <p><input id='#image2' type="file" name="myFiles" onchange="ImageInput('#image2');"></p>
         <img id="image2" src="#" alt="Image 2"/>
     </div>
+
+    <div>
+        <table id="table2" src="#">
+            <thead>
+                <tr>
+                    <th data-field="id">Item ID</th>
+                    <th data-field="name">Item Name</th>
+                    <th data-field="price">Item Price</th>
+                </tr>
+            </thead>
+            <tbody>
+
+            </tbody>
+        </table>
+    </div>
+
     
     <div>
     <button onclick="javascript:demoFromHTML();">PDF</button>
