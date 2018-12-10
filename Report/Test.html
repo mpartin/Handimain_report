@@ -11,13 +11,17 @@
   <script type="text/javascript" src="lib/jquery-compat-git.js"></script>
 
     <link rel="stylesheet" type="text/css" href="lib/result-light.css">
-
+    <link rel="stylesheet" type="text/css" href="lib/handimain_report.css">
       <script type="text/javascript" src="lib/bootstrap.js"></script>
       <link rel="stylesheet" type="text/css" href="lib/bootstrap.css">
       <script type="text/javascript" src="lib/jspdf.js"></script>
+
   <style type="text/css">
-    
+    /* thead { display: table-header-group }
+    tfoot { display: table-row-group }
+    tr { page-break-inside: avoid }     */
   </style>
+
 
   <script type="text/javascript">
 
@@ -64,14 +68,19 @@ function JSONopenFile(event) {
 
 function demoFromHTML() {
 
-    var pdf = new jsPDF('p', 'pt', 'letter');
+    var pdf = new jsPDF('p', 'pt', 'a4');
+
 
     // source can be HTML-formatted string, or a reference
     // to an actual DOM element from which the text will be scraped.
-    source = $('#customers')[0];
-        //pdf.addImage(myimage, 'JPEG', 15, 40, 180, 160);
+    source = $('#report')[0];
 
     document.getElementById("NameHide").innerHTML="Name: "+document.getElementById("name").value;
+    document.getElementById("AgeHide").innerHTML="Age: "+document.getElementById("age").value;
+    document.getElementById("LatHide").innerHTML="Lateralite: "+document.getElementById("lat").value;
+    document.getElementById("ServiceHide").innerHTML="Service d'origine: "+document.getElementById("serv_ori").value;
+    document.getElementById("ExamHide").innerHTML="Examen du: "+document.getElementById("exam_date").value;
+    document.getElementById("NumHide").innerHTML="Numero d'enregistrement: "+document.getElementById("num_rec").value;
 
     // we support special element handlers. Register them with jQuery-style 
     // ID selector for either ID or node name. ("#iAmID", "div", "span" etc.)
@@ -84,9 +93,10 @@ function demoFromHTML() {
             return true
         }
     };
+
     margins = {
-        top: 80,
-        bottom: 60,
+        top: 40,
+        bottom: 40,
         left: 40,
         width: 522
     };
@@ -105,6 +115,7 @@ function demoFromHTML() {
         //          this allow the insertion of new lines after html
         pdf.save('Test.pdf');
     }, margins);
+
 }
 
 
@@ -112,12 +123,55 @@ function demoFromHTML() {
 
 </head>
 <body>
-  <div id="customers">
+  <div id="report">
+    <!-- --------------------------------------------------------------------------- -->
+    <!-- (1) FORM PAGE -->
+    <!-- --------------------------------------------------------------------------- -->
 
     <div class="form-control" id="input">
-            <label><div id="NameHide">Name :</label>
-            <input type="text" name="name" id="name" autocomplete="off" required>
+        <header>
+                <em>Laboratoire Analyse du Mouvement</em> <br> Hôpital Henry Gabrielle, Pavillon Delore, Service du Pr Rodes
+        </header>
+        <h2 class = 'bottom_space'>
+            <center> Analyse de la motricité du membre supérieur </center>
+        </h2>
+
+
+        <div id='form_info' style="margin:0;padding:0" >
+            <div>
+                <label><div id="NameHide">Nom :</label>
+                    <input type="text" name="name" id="name" autocomplete="off">
+            </div>
+
+            <div>
+                <label><div id="AgeHide">Age :</label>
+                    <input type="text" name="age" id="age" autocomplete="off">
+            </div>
+            <div>
+                <label><div id="LatHide">Lateralite :</label>
+                    <input type="text" name="lat" id="lat" autocomplete="off">
+            </div>
+            <div>
+                <label><div id="ServiceHide">Service d'origine :</label>
+                    <input type="text" name="serv_ori" id="serv_ori" autocomplete="off">
+            </div>
+            <div>
+                <label><div id="ExamHide">Examen du :</label>
+                    <input type="text" name="exam_date" id="exam_date" autocomplete="off">
+            </div>
+            <div>
+                <label><div id="NumHide">Numero d'enregistrement :</label>
+                    <input type="text" name="num_rec" id="num_rec" autocomplete="off">
+            </div>
+            <div>
+                    <label><div id="NumHide">Numero d'enregistrement :</label>
+                        <input type="text" name="num_rec" id="num_rec" class='test' autocomplete="off">
+            </div>
+        </div>
+        
     </div>
+
+
 
     <div>
         <p><input id='#image1' type="file" name="myFiles" onchange="ImageInput('#image1');"></p>
