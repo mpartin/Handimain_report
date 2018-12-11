@@ -77,11 +77,16 @@ function demoFromHTML() {
 
     document.getElementById("NameHide").innerHTML="Name: "+document.getElementById("name").value;
     document.getElementById("AgeHide").innerHTML="Age: "+document.getElementById("age").value;
-    document.getElementById("LatHide").innerHTML="Lateralite: "+document.getElementById("lat").value;
+    document.getElementById("LatHide").innerHTML="Latéralité: "+document.getElementById("lat").value;
     document.getElementById("ServiceHide").innerHTML="Service d'origine: "+document.getElementById("serv_ori").value;
     document.getElementById("ExamHide").innerHTML="Examen du: "+document.getElementById("exam_date").value;
-    document.getElementById("NumHide").innerHTML="Numero d'enregistrement: "+document.getElementById("num_rec").value;
+    document.getElementById("NumHide").innerHTML="Numéro d'enregistrement: "+document.getElementById("num_rec").value;
     document.getElementById("DiagnosticHide").innerHTML="Diagnostic: "+document.getElementById("diagnostic").value;
+    document.getElementById("IndicationHide").innerHTML="Indication: "+document.getElementById("indication").value;
+    document.getElementById("FaisabiliteHide").innerHTML="Faisabilité: "+document.getElementById("faisabilite").value;
+    document.getElementById("ConclusionHide").innerHTML="Conclusion: "+document.getElementById("conclusion").value;
+    
+
 
     // we support special element handlers. Register them with jQuery-style 
     // ID selector for either ID or node name. ("#iAmID", "div", "span" etc.)
@@ -140,44 +145,129 @@ function demoFromHTML() {
 
         <div id='form_info' style="margin:0;padding:0" >
             <div>
-                <label><div id="NameHide">Nom :</label>
+                <label><div id="NameHide">Nom:</label>
                     <input type="text" name="name" id="name" autocomplete="off">
             </div>
 
             <div>
-                <label><div id="AgeHide">Age :</label>
+                <label><div id="AgeHide">Age:</label>
                     <input type="text" name="age" id="age" autocomplete="off">
             </div>
             <div>
-                <label><div id="LatHide">Lateralite :</label>
+                <label><div id="LatHide">Latéralité:</label>
                     <input type="text" name="lat" id="lat" autocomplete="off">
             </div>
             <div>
-                <label><div id="ServiceHide">Service d'origine :</label>
+                <label><div id="ServiceHide">Service d'origine:</label>
                     <input type="text" name="serv_ori" id="serv_ori" autocomplete="off">
             </div>
             <div>
-                <label><div id="ExamHide">Examen du :</label>
+                <label><div id="ExamHide">Examen du:</label>
                     <input type="text" name="exam_date" id="exam_date" autocomplete="off">
             </div>
             <div>
-                <label><div id="NumHide">Numero d'enregistrement :</label>
+                <label><div id="NumHide">Numéro d'enregistrement:</label>
                     <input type="text" name="num_rec" id="num_rec" autocomplete="off">
             </div>
             <div>
-                    <label><div id="DiagnosticHide">Diagnostic :</label>
-                        <TEXTAREA NAME="diagnostic" id="diagnostic" ROWS=3 COLS=30 autocomplete="off"></TEXTAREA>
+                <label><div id="DiagnosticHide">Diagnostic:</label>
+                    <TEXTAREA name="diagnostic" id="diagnostic" rows=3 cols=30 autocomplete="off"></TEXTAREA>
             </div>
+            <div>
+                <label><div id="IndicationHide">Indication:</label>
+                    <TEXTAREA NAME="indication" id="indication" rows=3 cols=30 autocomplete="off"></TEXTAREA>
+            </div>
+            <div>
+                <label><div id="FaisabiliteHide">Faisabilité:</label>
+                    <input type="text" name="faisabilite" id="faisabilite" autocomplete="off">
+            </div>
+            <div>
+                <label><div id="ConclusionHide">Conclusion:</label>
+                    <TEXTAREA NAME="conclusion" id="conclusion" rows=3 cols=30 autocomplete="off"></TEXTAREA>
+            </div>
+
         </div>
         
     </div>
 
+<!-- --------------------------------------------------------------------- -->
+<!-- --------------------------------------------------------------------- -->
+<!-- --------------------------------------------------------------------- -->
 
+    <h3 class = 'bottom_space'>
+        <center> Etude de la préhension </center>
+    </h3>
 
+    <h4 class = 'bottom_space'>
+        <center> Vitesse des réponses: </center>
+    </h4>
+    <h4 class = 'bottom_space'>
+        <center> Transport et fluidité motrice: </center>
+    </h4>
+    <h4 class = 'bottom_space'>
+        <center> Formation de la pince manuelle: </center>
+    </h4>
+    <h4 class = 'bottom_space'>
+        <center> Coordination transport/préhension: </center>
+    </h4>
+    <h4 class = 'bottom_space'>
+        <center> Coordination inter-segmentaire: </center>
+    </h4>    
     <div>
         <p><input id='#image1' type="file" name="myFiles" onchange="ImageInput('#image1');"></p>
         <img id="image1" src="#" alt="Image 1"/>
     </div>
+
+<!-- --------------------------------------------------------------------- -->
+<!-- --------------------------------------------------------------------- -->
+<!-- --------------------------------------------------------------------- -->
+
+    <h3 class = 'bottom_space'>
+        <center> Etude du pointage visuel latéral </center>
+    </h3>
+    <h4 class = 'bottom_space'>
+        <center> Vitesse des réponses: </center>
+    </h4>
+    <h4 class = 'bottom_space'>
+        <center> Transport et fluidité motrice: </center>
+    </h4>
+    <h4 class = 'bottom_space'>
+        <center> Coordination inter-segmentaire: </center>
+    </h4>    
+    <h4 class = 'bottom_space'>
+        <center> Précision finale: </center>
+    </h4>    
+
+    <div>
+        <p><input id='#image2' type="file" name="myFiles" onchange="ImageInput('#image2');"></p>
+        <img id="image2" src="#" alt="Image 2"/>
+    </div>
+
+<!-- --------------------------------------------------------------------- -->
+<!-- --------------------------------------------------------------------- -->
+<!-- --------------------------------------------------------------------- -->
+
+    <h3 class = 'bottom_space'>
+        <center> Etude du pointage visuel antéro-postérieur </center>
+    </h3>
+    <h4 class = 'bottom_space'>
+        <center> Vitesse des réponses: </center>
+    </h4>
+    <h4 class = 'bottom_space'>
+        <center> Transport et fluidité motrice: </center>
+    </h4>
+    <h4 class = 'bottom_space'>
+        <center> Coordination inter-segmentaire: </center>
+    </h4>    
+    <h4 class = 'bottom_space'>
+        <center> Précision finale: </center>
+    </h4>    
+
+    <div>
+        <p><input id='#image3' type="file" name="myFiles" onchange="ImageInput('#image3');"></p>
+        <img id="image3" src="#" alt="Image 3"/>
+    </div>
+
 
     <div>
         <p><input id='#table1' type="file" name="myFiles" onchange="JSONopenFile(event);"></p>
@@ -195,10 +285,6 @@ function demoFromHTML() {
         </table>
     </div>
 
-    <div>
-        <p><input id='#image2' type="file" name="myFiles" onchange="ImageInput('#image2');"></p>
-        <img id="image2" src="#" alt="Image 2"/>
-    </div>
 
     <div>
         <table id="table2" src="#">
