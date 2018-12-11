@@ -81,6 +81,7 @@ function demoFromHTML() {
     document.getElementById("ServiceHide").innerHTML="Service d'origine: "+document.getElementById("serv_ori").value;
     document.getElementById("ExamHide").innerHTML="Examen du: "+document.getElementById("exam_date").value;
     document.getElementById("NumHide").innerHTML="Numero d'enregistrement: "+document.getElementById("num_rec").value;
+    document.getElementById("DiagnosticHide").innerHTML="Diagnostic: "+document.getElementById("diagnostic").value;
 
     // we support special element handlers. Register them with jQuery-style 
     // ID selector for either ID or node name. ("#iAmID", "div", "span" etc.)
@@ -164,8 +165,8 @@ function demoFromHTML() {
                     <input type="text" name="num_rec" id="num_rec" autocomplete="off">
             </div>
             <div>
-                    <label><div id="NumHide">Numero d'enregistrement :</label>
-                        <input type="text" name="num_rec" id="num_rec" class='test' autocomplete="off">
+                    <label><div id="DiagnosticHide">Diagnostic :</label>
+                        <TEXTAREA NAME="diagnostic" id="diagnostic" ROWS=3 COLS=30 autocomplete="off"></TEXTAREA>
             </div>
         </div>
         
