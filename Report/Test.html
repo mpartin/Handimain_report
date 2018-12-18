@@ -75,16 +75,16 @@ function demoFromHTML() {
     // to an actual DOM element from which the text will be scraped.
     source = $('#report')[0];
 
-    document.getElementById("NameHide").innerHTML="Name: "+document.getElementById("name").value;
-    document.getElementById("AgeHide").innerHTML="Age: "+document.getElementById("age").value;
-    document.getElementById("LatHide").innerHTML="Latéralité: "+document.getElementById("lat").value;
-    document.getElementById("ServiceHide").innerHTML="Service d'origine: "+document.getElementById("serv_ori").value;
-    document.getElementById("ExamHide").innerHTML="Examen du: "+document.getElementById("exam_date").value;
-    document.getElementById("NumHide").innerHTML="Numéro d'enregistrement: "+document.getElementById("num_rec").value;
-    document.getElementById("DiagnosticHide").innerHTML="Diagnostic: "+document.getElementById("diagnostic").value;
-    document.getElementById("IndicationHide").innerHTML="Indication: "+document.getElementById("indication").value;
-    document.getElementById("FaisabiliteHide").innerHTML="Faisabilité: "+document.getElementById("faisabilite").value;
-    document.getElementById("ConclusionHide").innerHTML="Conclusion: "+document.getElementById("conclusion").value;
+    document.getElementById("NameHide").innerHTML="<p class='not_bold'><b>"+"Nom: "+"</b>"+document.getElementById("name").value +"</p>";
+    document.getElementById("AgeHide").innerHTML="<p class='not_bold'><b>" +"Age: "+"</b>" +document.getElementById("age").value+"</p>";
+    document.getElementById("LatHide").innerHTML="<p class='not_bold'><b>" +"Latéralité: "+"</b>" +document.getElementById("lat").value+"</p>";
+    document.getElementById("ServiceHide").innerHTML="<p class='not_bold'><b>" +"Service d'origine: "+"</b>" +document.getElementById("serv_ori").value+"</p>";
+    document.getElementById("ExamHide").innerHTML="<p class='not_bold'><b>" +"Examen du: "+"</b>" +document.getElementById("exam_date").value+"</p>";
+    document.getElementById("NumHide").innerHTML="<p class='not_bold'><b>" +"Numéro d'enregistrement: "+"</b>" +document.getElementById("num_rec").value+"</p>";
+    document.getElementById("DiagnosticHide").innerHTML="<p class='not_bold'><b>" +"Diagnostic: "+"</b>" +document.getElementById("diagnostic").value+"</p>";
+    document.getElementById("IndicationHide").innerHTML="<p class='not_bold'><b>" +"Indication: "+"</b>" +document.getElementById("indication").value+"</p>";
+    document.getElementById("FaisabiliteHide").innerHTML="<p class='not_bold'><b>" +"Faisabilité: "+"</b>" +document.getElementById("faisabilite").value+"</p>";
+    document.getElementById("ConclusionHide").innerHTML="<p class='not_bold'><b>" +"Conclusion: "+"</b>" +document.getElementById("conclusion").value+"</p>";
     
 
 
@@ -134,7 +134,7 @@ function demoFromHTML() {
     <!-- (1) FORM PAGE -->
     <!-- --------------------------------------------------------------------------- -->
 
-    <div class="form-control" id="input">
+    <div>
         <header>
                 <em>Laboratoire Analyse du Mouvement</em> <br> Hôpital Henry Gabrielle, Pavillon Delore, Service du Pr Rodes
         </header>
@@ -143,47 +143,46 @@ function demoFromHTML() {
         </h2>
 
 
-        <div id='form_info' style="margin:0;padding:0" >
+        <div id='form_info' style="margin:25px" >
             <div>
                 <label><div id="NameHide">Nom:</label>
-                    <input type="text" name="name" id="name" autocomplete="off">
+                    <p><input type="text" name="name" style='font-weight:normal' id="name" autocomplete="off"></p>
             </div>
-
             <div>
                 <label><div id="AgeHide">Age:</label>
-                    <input type="text" name="age" id="age" autocomplete="off">
+                    <p><input type="text" name="age" style='font-weight:normal' id="age" autocomplete="off"></p>
             </div>
             <div>
                 <label><div id="LatHide">Latéralité:</label>
-                    <input type="text" name="lat" id="lat" autocomplete="off">
+                    <p><input type="text" name="lat" style='font-weight:normal' id="lat" autocomplete="off"></p>
             </div>
             <div>
                 <label><div id="ServiceHide">Service d'origine:</label>
-                    <input type="text" name="serv_ori" id="serv_ori" autocomplete="off">
+                    <p><input type="text" name="serv_ori" style='font-weight:normal' id="serv_ori" autocomplete="off"></p>
             </div>
             <div>
                 <label><div id="ExamHide">Examen du:</label>
-                    <input type="text" name="exam_date" id="exam_date" autocomplete="off">
+                    <p><input type="text" name="exam_date" style='font-weight:normal' id="exam_date" autocomplete="off"></p>
             </div>
             <div>
                 <label><div id="NumHide">Numéro d'enregistrement:</label>
-                    <input type="text" name="num_rec" id="num_rec" autocomplete="off">
+                    <p><input type="text" name="num_rec" style='font-weight:normal' id="num_rec" autocomplete="off"></p>
             </div>
             <div>
                 <label><div id="DiagnosticHide">Diagnostic:</label>
-                    <TEXTAREA name="diagnostic" id="diagnostic" rows=3 cols=30 autocomplete="off"></TEXTAREA>
+                    <p><TEXTAREA name="diagnostic" style='font-weight:normal' id="diagnostic" rows=3 cols=30 autocomplete="off"></TEXTAREA></p>
             </div>
             <div>
                 <label><div id="IndicationHide">Indication:</label>
-                    <TEXTAREA NAME="indication" id="indication" rows=3 cols=30 autocomplete="off"></TEXTAREA>
+                    <p><TEXTAREA name="indication" style='font-weight:normal' id="indication" rows=3 cols=30 autocomplete="off"></TEXTAREA></p>
             </div>
             <div>
                 <label><div id="FaisabiliteHide">Faisabilité:</label>
-                    <input type="text" name="faisabilite" id="faisabilite" autocomplete="off">
+                    <p><input type="text" name="faisabilite" style='font-weight:normal' id="faisabilite" autocomplete="off"></p>
             </div>
             <div>
                 <label><div id="ConclusionHide">Conclusion:</label>
-                    <TEXTAREA NAME="conclusion" id="conclusion" rows=3 cols=30 autocomplete="off"></TEXTAREA>
+                    <p><TEXTAREA name="conclusion" style='font-weight:normal' id="conclusion" rows=3 cols=30 autocomplete="off"></TEXTAREA></p>
             </div>
 
         </div>
@@ -193,6 +192,43 @@ function demoFromHTML() {
 <!-- --------------------------------------------------------------------- -->
 <!-- --------------------------------------------------------------------- -->
 <!-- --------------------------------------------------------------------- -->
+
+        <div>
+            <p><input id='#table1' type="file" name="myFiles" onchange="JSONopenFile(event);"></p>
+            <table id="table1" src="#">
+                <thead>
+                    <tr>
+                        <th data-field="id">Item ID</th>
+                        <th data-field="name">Item Name</th>
+                        <th data-field="price">Item Price</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                </tbody>
+            </table>
+        </div>
+
+
+        <div>
+            <table id="table2" src="#">
+                <thead>
+                    <tr>
+                        <th data-field="id">Item ID</th>
+                        <th data-field="name">Item Name</th>
+                        <th data-field="price">Item Price</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                </tbody>
+            </table>
+        </div>
+
+<!-- --------------------------------------------------------------------- -->
+<!-- --------------------------------------------------------------------- -->
+<!-- --------------------------------------------------------------------- -->
+
 
     <h3 class = 'bottom_space'>
         <center> Etude de la préhension </center>
@@ -267,40 +303,6 @@ function demoFromHTML() {
         <p><input id='#image3' type="file" name="myFiles" onchange="ImageInput('#image3');"></p>
         <img id="image3" src="#" alt="Image 3"/>
     </div>
-
-
-    <div>
-        <p><input id='#table1' type="file" name="myFiles" onchange="JSONopenFile(event);"></p>
-        <table id="table1" src="#">
-            <thead>
-                <tr>
-                    <th data-field="id">Item ID</th>
-                    <th data-field="name">Item Name</th>
-                    <th data-field="price">Item Price</th>
-                </tr>
-            </thead>
-            <tbody>
-
-            </tbody>
-        </table>
-    </div>
-
-
-    <div>
-        <table id="table2" src="#">
-            <thead>
-                <tr>
-                    <th data-field="id">Item ID</th>
-                    <th data-field="name">Item Name</th>
-                    <th data-field="price">Item Price</th>
-                </tr>
-            </thead>
-            <tbody>
-
-            </tbody>
-        </table>
-    </div>
-
     
     <div>
     <button onclick="javascript:demoFromHTML();">PDF</button>

@@ -1,3 +1,6 @@
 .bottom_space {
      margin-bottom: 0cm;
   }
+.not_bold {
+   font-weight: normal;
+}
