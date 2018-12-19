@@ -4,3 +4,7 @@
 .not_bold {
    font-weight: normal;
 }
+td {
+    text-align: center;
+    vertical-align: middle;
+}

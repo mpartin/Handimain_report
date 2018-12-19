@@ -54,10 +54,59 @@ function JSONopenFile(event) {
         var text = reader.result;
         var obj = JSON.parse(text);
         // console.log('text',obj);
-        obj.forEach(function(item){
-            $('#table1 > tbody').append('<tr><td>'+item.id+'</td><td>'+item["name"]+'</td><td>'+item.price+'</td></tr>')
-            $('#table2 > tbody').append('<tr><td>'+item.id+'</td><td>'+item["name"]+'</td><td>'+item.price+'</td></tr>')
-        });
+        $('#table1 > tbody').append('<tr><td>'+'Nb de mouvements'+'</td><td>'
+                                              +obj["VitesseRep_preh"].NbEssais[0]+'</td><td>'
+                                              +obj["VitesseRep_preh"].NbEssais[1]+'</td><td>'
+                                              +obj["VitesseRep_preh"].NbEssais[2]+'</td><td>'
+                                              +obj["VitesseRep_preh"].NbEssais[3]+'</td></tr>');
+        $('#table1 > tbody').append('<tr><td>'+'Latence(ms)'+'</td><td>'
+                                              +obj["VitesseRep_preh"].LatenceMvtMean_GV[0]+'</td><td>'
+                                              +obj["VitesseRep_preh"].LatenceMvtMean_GV[1]+'</td><td>'
+                                              +obj["VitesseRep_preh"].LatenceMvtMean_GV[2]+'</td><td>'
+                                              +obj["VitesseRep_preh"].LatenceMvtMean_GV[3]+'</td></tr>');
+        $('#table1 > tbody').append('<tr><td>'+'</td><td>'
+                                              +'+/-'+obj["VitesseRep_preh"].LatenceMvtMeanStd_GV[0]+'</td><td>'
+                                              +'+/-'+obj["VitesseRep_preh"].LatenceMvtMeanStd_GV[1]+'</td><td>'
+                                              +'+/-'+obj["VitesseRep_preh"].LatenceMvtMeanStd_GV[2]+'</td><td>'
+                                              +'+/-'+obj["VitesseRep_preh"].LatenceMvtMeanStd_GV[3]+'</td></tr>');
+        $('#table1 > tbody').append('<tr><td>'+'Durée mouvement (ms)'+'</td><td>'
+                                              +obj["VitesseRep_preh"].DureeMvtMean_GV[0]+'</td><td>'
+                                              +obj["VitesseRep_preh"].DureeMvtMean_GV[1]+'</td><td>'
+                                              +obj["VitesseRep_preh"].DureeMvtMean_GV[2]+'</td><td>'
+                                              +obj["VitesseRep_preh"].DureeMvtMean_GV[3]+'</td></tr>');
+        $('#table1 > tbody').append('<tr><td>'+'</td><td>'
+                                              +'+/-'+obj["VitesseRep_preh"].DureeMvtStd_GV[0]+'</td><td>'
+                                              +'+/-'+obj["VitesseRep_preh"].DureeMvtStd_GV[1]+'</td><td>'
+                                              +'+/-'+obj["VitesseRep_preh"].DureeMvtStd_GV[2]+'</td><td>'
+                                              +'+/-'+obj["VitesseRep_preh"].DureeMvtStd_GV[3]+'</td></tr>');
+
+        $('#table2 > tbody').append('<tr><td>'+'Nb de mouvements'+'</td><td>'
+                                    +obj["TransportEtFluidite_preh"].PicVitTgMean_GV[0]+'</td><td>'
+                                    +obj["TransportEtFluidite_preh"].PicVitTgMean_GV[1]+'</td><td>'
+                                    +obj["TransportEtFluidite_preh"].PicVitTgMean_GV[2]+'</td><td>'
+                                    +obj["TransportEtFluidite_preh"].PicVitTgMean_GV[3]+'</td></tr>');
+        $('#table2 > tbody').append('<tr><td>'+'</td><td>'
+                                    +'+/-'+obj["TransportEtFluidite_preh"].PicVitTgMeanStd_GV[0]+'</td><td>'
+                                    +'+/-'+obj["TransportEtFluidite_preh"].PicVitTgMeanStd_GV[1]+'</td><td>'
+                                    +'+/-'+obj["TransportEtFluidite_preh"].PicVitTgMeanStd_GV[2]+'</td><td>'
+                                    +'+/-'+obj["TransportEtFluidite_preh"].PicVitTgMeanStd_GV[3]+'</td></tr>');
+        $('#table2 > tbody').append('<tr><td>'+'Durée mouvement (ms)'+'</td><td>'
+                                    +obj["TransportEtFluidite_preh"].LatencePicVitTgMean_GV[0]+'</td><td>'
+                                    +obj["TransportEtFluidite_preh"].LatencePicVitTgMean_GV[1]+'</td><td>'
+                                    +obj["TransportEtFluidite_preh"].LatencePicVitTgMean_GV[2]+'</td><td>'
+                                    +obj["TransportEtFluidite_preh"].LatencePicVitTgMean_GV[3]+'</td></tr>');
+        $('#table2 > tbody').append('<tr><td>'+'</td><td>'
+                                    +'+/-'+obj["TransportEtFluidite_preh"].LatencePicVitTgMeanStd_GV[0]+'</td><td>'
+                                    +'+/-'+obj["TransportEtFluidite_preh"].LatencePicVitTgMeanStd_GV[1]+'</td><td>'
+                                    +'+/-'+obj["TransportEtFluidite_preh"].LatencePicVitTgMeanStd_GV[2]+'</td><td>'
+                                    +'+/-'+obj["TransportEtFluidite_preh"].LatencePicVitTgMeanStd_GV[3]+'</td></tr>');
+
+
+        
+        // obj.forEach(function(item){
+        //     $('#table1 > tbody').append('<tr><td>'+item.id+'</td><td>'+item["name"]+'</td><td>'+item.price+'</td></tr>')
+        //     $('#table2 > tbody').append('<tr><td>'+item.id+'</td><td>'+item["name"]+'</td><td>'+item.price+'</td></tr>')
+        // });
     };
 
     reader.readAsText(input.files[0]);
@@ -86,8 +135,30 @@ function demoFromHTML() {
     document.getElementById("FaisabiliteHide").innerHTML="<p class='not_bold'><b>" +"Faisabilité: "+"</b>" +document.getElementById("faisabilite").value+"</p>";
     document.getElementById("ConclusionHide").innerHTML="<p class='not_bold'><b>" +"Conclusion: "+"</b>" +document.getElementById("conclusion").value+"</p>";
     
+    // ------------------------------------------------------------------------------- //
+    document.getElementById("temp1").innerHTML="<p class='not_bold'>" +document.getElementById("temp1").value+"</p>";
+    document.getElementById("temp2").innerHTML="<p class='not_bold'>" +document.getElementById("temp2").value+"</p>";
+    document.getElementById("temp3").innerHTML="<p class='not_bold'>" +document.getElementById("temp3").value+"</p>";
+    document.getElementById("temp4").innerHTML="<p class='not_bold'>" +document.getElementById("temp4").value+"</p>";
+    
+    document.getElementById("temp5").innerHTML="<p class='not_bold'>" +document.getElementById("temp5").value+"</p>";
+    document.getElementById("temp6").innerHTML="<p class='not_bold'>" +document.getElementById("temp6").value+"</p>";
+    document.getElementById("temp7").innerHTML="<p class='not_bold'>" +document.getElementById("temp7").value+"</p>";
+    document.getElementById("temp8").innerHTML="<p class='not_bold'>" +document.getElementById("temp8").value+"</p>";
+    
+    document.getElementById("temp9").innerHTML="<p class='not_bold'>" +document.getElementById("temp9").value+"</p>";
+    document.getElementById("temp10").innerHTML="<p class='not_bold'>" +document.getElementById("temp10").value+"</p>";
+    document.getElementById("temp11").innerHTML="<p class='not_bold'>" +document.getElementById("temp11").value+"</p>";
+    document.getElementById("temp12").innerHTML="<p class='not_bold'>" +document.getElementById("temp12").value+"</p>";
+
+    document.getElementById("temp13").innerHTML="<p class='not_bold'>" +document.getElementById("temp13").value+"</p>";
+    document.getElementById("temp14").innerHTML="<p class='not_bold'>" +document.getElementById("temp14").value+"</p>";
+    document.getElementById("temp15").innerHTML="<p class='not_bold'>" +document.getElementById("temp15").value+"</p>";
+    document.getElementById("temp16").innerHTML="<p class='not_bold'>" +document.getElementById("temp16").value+"</p>";
 
 
+    // ------------------------------------------------------------------------------- //
+    
     // we support special element handlers. Register them with jQuery-style 
     // ID selector for either ID or node name. ("#iAmID", "div", "span" etc.)
     // There is no support for any other type of selectors 
@@ -189,41 +260,6 @@ function demoFromHTML() {
         
     </div>
 
-<!-- --------------------------------------------------------------------- -->
-<!-- --------------------------------------------------------------------- -->
-<!-- --------------------------------------------------------------------- -->
-
-        <div>
-            <p><input id='#table1' type="file" name="myFiles" onchange="JSONopenFile(event);"></p>
-            <table id="table1" src="#">
-                <thead>
-                    <tr>
-                        <th data-field="id">Item ID</th>
-                        <th data-field="name">Item Name</th>
-                        <th data-field="price">Item Price</th>
-                    </tr>
-                </thead>
-                <tbody>
-
-                </tbody>
-            </table>
-        </div>
-
-
-        <div>
-            <table id="table2" src="#">
-                <thead>
-                    <tr>
-                        <th data-field="id">Item ID</th>
-                        <th data-field="name">Item Name</th>
-                        <th data-field="price">Item Price</th>
-                    </tr>
-                </thead>
-                <tbody>
-
-                </tbody>
-            </table>
-        </div>
 
 <!-- --------------------------------------------------------------------- -->
 <!-- --------------------------------------------------------------------- -->
@@ -237,9 +273,67 @@ function demoFromHTML() {
     <h4 class = 'bottom_space'>
         <center> Vitesse des réponses: </center>
     </h4>
+
+    <div>
+        <p><input id='#table1' type="file" name="myFiles" onchange="JSONopenFile(event);"></p>
+        <table id="table1" src="#">
+            <thead>
+                <tr>
+                    <th width='20%'></th>
+                    <th width='20%'>Main G à G</th>
+                    <th width='20%'>Main G à D</th>
+                    <th width='20%'>Main D à G</th>
+                    <th width='20%'>Main D à D</th>
+                </tr>
+            </thead>
+            <tbody>
+
+            </tbody>
+        </table>
+    </div>
+
+
     <h4 class = 'bottom_space'>
         <center> Transport et fluidité motrice: </center>
     </h4>
+
+    <div>
+        <table id="table2" src="#">
+            <thead>
+                <tr>
+                    <th width='20%'></th>
+                    <th width='20%'>Main G à G</th>
+                    <th width='20%'>Main G à D</th>
+                    <th width='20%'>Main D à G</th>
+                    <th width='20%'>Main D à D</th>
+                </tr>
+            </thead>
+            <tbody>
+                    <tr><td>Formation des trajectoires</td>
+                        <td><p><input type="text" id="temp1" style='font-weight:normal' autocomplete="off"></p></td>
+                        <td><p><input type="text" id="temp2" style='font-weight:normal' autocomplete="off"></p></td>
+                        <td><p><input type="text" id="temp3" style='font-weight:normal' autocomplete="off"></p></td>
+                        <td><p><input type="text" id="temp4" style='font-weight:normal' autocomplete="off"></p></td></tr>
+                    <tr><td>Variabilité des trajectoires</td>
+                        <td><p><input type="text" id="temp5" style='font-weight:normal' autocomplete="off"></p></td>
+                        <td><p><input type="text" id="temp6" style='font-weight:normal' autocomplete="off"></p></td>
+                        <td><p><input type="text" id="temp7" style='font-weight:normal' autocomplete="off"></p></td>
+                        <td><p><input type="text" id="temp8" style='font-weight:normal' autocomplete="off"></p></td></tr>
+                    <tr><td>Nombre de pics de vitesse</td>
+                        <td><p><input type="text" id="temp9" style='font-weight:normal' autocomplete="off"></p></td>
+                        <td><p><input type="text" id="temp10" style='font-weight:normal' autocomplete="off"></p></td>
+                        <td><p><input type="text" id="temp11" style='font-weight:normal' autocomplete="off"></p></td>
+                        <td><p><input type="text" id="temp12" style='font-weight:normal' autocomplete="off"></p></td></tr>
+                    <tr><td>Profil d'accélération</td>
+                        <td><p><input type="text" id="temp13" style='font-weight:normal' autocomplete="off"></p></td>
+                        <td><p><input type="text" id="temp14" style='font-weight:normal' autocomplete="off"></p></td>
+                        <td><p><input type="text" id="temp15" style='font-weight:normal' autocomplete="off"></p></td>
+                        <td><p><input type="text" id="temp16" style='font-weight:normal' autocomplete="off"></p></td></tr>
+        
+            </tbody>
+        </table>
+    </div>
+
     <h4 class = 'bottom_space'>
         <center> Formation de la pince manuelle: </center>
     </h4>
