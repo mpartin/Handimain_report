@@ -4987,7 +4987,8 @@ AcroForm.internal.setBitPosition = function (variable, position, value) {
         fontSize,
         fontStyle,
         padding = 3,
-        margin = 13,
+        //margin = 13,
+        margin = 100,
         headerFunction,
         lastCellPos = { x: undefined, y: undefined, w: undefined, h: undefined, ln: undefined },
         pages = 1,
@@ -5345,7 +5346,8 @@ AcroForm.internal.setBitPosition = function (variable, position, value) {
 
             tableHeaderCell = this.tableHeaderRow[i];
             if (new_page) {
-                this.margins.top = margin;
+                //this.margins.top = margin;
+                this.margins.top = margin -this.getLineHeight()/2;
                 tableHeaderCell[1] = this.margins && this.margins.top || 0;
                 tempHeaderConf.push(tableHeaderCell);
             }
