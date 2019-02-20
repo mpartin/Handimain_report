@@ -80,7 +80,7 @@ function JSONopenFile(event) {
                                               +'+/-'+obj["VitesseRep_preh"].DureeMvtStd_GV[2]+'</td><td>'
                                               +'+/-'+obj["VitesseRep_preh"].DureeMvtStd_GV[3]+'</td></tr>');
 
-        $('#table2 > tbody').append('<tr><td>'+'Nb de mouvements'+'</td><td>'
+        $('#table2 > tbody').append('<tr><td>'+'Pic de vitesse (ms)'+'</td><td>'
                                     +obj["TransportEtFluidite_preh"].PicVitTgMean_GV[0]+'</td><td>'
                                     +obj["TransportEtFluidite_preh"].PicVitTgMean_GV[1]+'</td><td>'
                                     +obj["TransportEtFluidite_preh"].PicVitTgMean_GV[2]+'</td><td>'
@@ -90,7 +90,7 @@ function JSONopenFile(event) {
                                     +'+/-'+obj["TransportEtFluidite_preh"].PicVitTgMeanStd_GV[1]+'</td><td>'
                                     +'+/-'+obj["TransportEtFluidite_preh"].PicVitTgMeanStd_GV[2]+'</td><td>'
                                     +'+/-'+obj["TransportEtFluidite_preh"].PicVitTgMeanStd_GV[3]+'</td></tr>');
-        $('#table2 > tbody').append('<tr><td>'+'Durée mouvement (ms)'+'</td><td>'
+        $('#table2 > tbody').append('<tr><td>'+'Latence du pic de vitesse (ms)'+'</td><td>'
                                     +obj["TransportEtFluidite_preh"].LatencePicVitTgMean_GV[0]+'</td><td>'
                                     +obj["TransportEtFluidite_preh"].LatencePicVitTgMean_GV[1]+'</td><td>'
                                     +obj["TransportEtFluidite_preh"].LatencePicVitTgMean_GV[2]+'</td><td>'
@@ -101,12 +101,358 @@ function JSONopenFile(event) {
                                     +'+/-'+obj["TransportEtFluidite_preh"].LatencePicVitTgMeanStd_GV[2]+'</td><td>'
                                     +'+/-'+obj["TransportEtFluidite_preh"].LatencePicVitTgMeanStd_GV[3]+'</td></tr>');
 
-
+        $('#table3 > tbody').append('<tr><td>'+'Latence (ms)'+'</td><td>'
+                                    +obj["FormationPince_preh"].LatencePinceMean_GV[0]+'</td><td>'
+                                    +obj["FormationPince_preh"].LatencePinceMean_GV[1]+'</td><td>'
+                                    +obj["FormationPince_preh"].LatencePinceMean_GV[2]+'</td><td>'
+                                    +obj["FormationPince_preh"].LatencePinceMean_GV[3]+'</td></tr>');
+        $('#table3 > tbody').append('<tr><td>'+'</td><td>'
+                                    +'+/-'+obj["FormationPince_preh"].LatencePinceMeanStd_GV[0]+'</td><td>'
+                                    +'+/-'+obj["FormationPince_preh"].LatencePinceMeanStd_GV[1]+'</td><td>'
+                                    +'+/-'+obj["FormationPince_preh"].LatencePinceMeanStd_GV[2]+'</td><td>'
+                                    +'+/-'+obj["FormationPince_preh"].LatencePinceMeanStd_GV[3]+'</td></tr>');
+        $('#table3 > tbody').append('<tr><td>'+"Pic moyen d'ouverture (mm)"+'</td><td>'
+                                    +obj["FormationPince_preh"].OuvPinceMaxMean_PV_GV[0]+'</td><td>'
+                                    +obj["FormationPince_preh"].OuvPinceMaxMean_PV_GV[1]+'</td><td>'
+                                    +obj["FormationPince_preh"].OuvPinceMaxMean_PV_GV[2]+'</td><td>'
+                                    +obj["FormationPince_preh"].OuvPinceMaxMean_PV_GV[3]+'</td></tr>');
+        $('#table3 > tbody').append('<tr><td>'+'</td><td>'
+                                    +'+/-'+obj["FormationPince_preh"].OuvPinceMaxMeanStd_PV_GV[0]+'</td><td>'
+                                    +'+/-'+obj["FormationPince_preh"].OuvPinceMaxMeanStd_PV_GV[1]+'</td><td>'
+                                    +'+/-'+obj["FormationPince_preh"].OuvPinceMaxMeanStd_PV_GV[2]+'</td><td>'
+                                    +'+/-'+obj["FormationPince_preh"].OuvPinceMaxMeanStd_PV_GV[3]+'</td></tr>');
+        $('#table3 > tbody').append('<tr><td>'+'Objet étroit (35mm)'+'</td><td>'
+                                    +obj["FormationPince_preh"].OuvPinceMaxMean_PV[0]+'</td><td>'
+                                    +obj["FormationPince_preh"].OuvPinceMaxMean_PV[1]+'</td><td>'
+                                    +obj["FormationPince_preh"].OuvPinceMaxMean_PV[2]+'</td><td>'
+                                    +obj["FormationPince_preh"].OuvPinceMaxMean_PV[3]+'</td></tr>');
+        $('#table3 > tbody').append('<tr><td>'+'</td><td>'
+                                    +'+/-'+obj["FormationPince_preh"].OuvPinceMaxMeanStd_PV[0]+'</td><td>'
+                                    +'+/-'+obj["FormationPince_preh"].OuvPinceMaxMeanStd_PV[1]+'</td><td>'
+                                    +'+/-'+obj["FormationPince_preh"].OuvPinceMaxMeanStd_PV[2]+'</td><td>'
+                                    +'+/-'+obj["FormationPince_preh"].OuvPinceMaxMeanStd_PV[3]+'</td></tr>');
+        $('#table3 > tbody').append('<tr><td>'+'Objet large (55mm)'+'</td><td>'
+                                    +obj["FormationPince_preh"].OuvPinceMaxMean_GV[0]+'</td><td>'
+                                    +obj["FormationPince_preh"].OuvPinceMaxMean_GV[1]+'</td><td>'
+                                    +obj["FormationPince_preh"].OuvPinceMaxMean_GV[2]+'</td><td>'
+                                    +obj["FormationPince_preh"].OuvPinceMaxMean_GV[3]+'</td></tr>');
+        $('#table3 > tbody').append('<tr><td>'+'</td><td>'
+                                    +'+/-'+obj["FormationPince_preh"].OuvPinceMaxMeanStd_GV[0]+'</td><td>'
+                                    +'+/-'+obj["FormationPince_preh"].OuvPinceMaxMeanStd_GV[1]+'</td><td>'
+                                    +'+/-'+obj["FormationPince_preh"].OuvPinceMaxMeanStd_GV[2]+'</td><td>'
+                                    +'+/-'+obj["FormationPince_preh"].OuvPinceMaxMeanStd_GV[3]+'</td></tr>');        
+        $('#table3 > tbody').append('<tr><td>'+"Date d'ouverture maximale"+'</td><td>'
+                                    +obj["FormationPince_preh"].TpsOuvPinceMaxMean_GV[0]+'</td><td>'
+                                    +obj["FormationPince_preh"].TpsOuvPinceMaxMean_GV[1]+'</td><td>'
+                                    +obj["FormationPince_preh"].TpsOuvPinceMaxMean_GV[2]+'</td><td>'
+                                    +obj["FormationPince_preh"].TpsOuvPinceMaxMean_GV[3]+'</td></tr>');
+        $('#table3 > tbody').append('<tr><td>'+'</td><td>'
+                                    +'+/-'+obj["FormationPince_preh"].TpsOuvPinceMaxMeanStd_GV[0]+'</td><td>'
+                                    +'+/-'+obj["FormationPince_preh"].TpsOuvPinceMaxMeanStd_GV[1]+'</td><td>'
+                                    +'+/-'+obj["FormationPince_preh"].TpsOuvPinceMaxMeanStd_GV[2]+'</td><td>'
+                                    +'+/-'+obj["FormationPince_preh"].TpsOuvPinceMaxMeanStd_GV[3]+'</td></tr>');
         
-        // obj.forEach(function(item){
-        //     $('#table1 > tbody').append('<tr><td>'+item.id+'</td><td>'+item["name"]+'</td><td>'+item.price+'</td></tr>')
-        //     $('#table2 > tbody').append('<tr><td>'+item.id+'</td><td>'+item["name"]+'</td><td>'+item.price+'</td></tr>')
-        // });
+        $('#table4 > tbody').append('<tr><td>'+"Début pince/transport (ms)"+'</td><td>'
+                                    +obj["CoordTransportPrehension_preh"].TpsDebPinceTransportMean_GV[0]+'</td><td>'
+                                    +obj["CoordTransportPrehension_preh"].TpsDebPinceTransportMean_GV[1]+'</td><td>'
+                                    +obj["CoordTransportPrehension_preh"].TpsDebPinceTransportMean_GV[2]+'</td><td>'
+                                    +obj["CoordTransportPrehension_preh"].TpsDebPinceTransportMean_GV[3]+'</td></tr>');
+        $('#table4 > tbody').append('<tr><td>'+'</td><td>'
+                                    +'+/-'+obj["CoordTransportPrehension_preh"].TpsDebPinceTransportMeanStd_GV[0]+'</td><td>'
+                                    +'+/-'+obj["CoordTransportPrehension_preh"].TpsDebPinceTransportMeanStd_GV[1]+'</td><td>'
+                                    +'+/-'+obj["CoordTransportPrehension_preh"].TpsDebPinceTransportMeanStd_GV[2]+'</td><td>'
+                                    +'+/-'+obj["CoordTransportPrehension_preh"].TpsDebPinceTransportMeanStd_GV[3]+'</td></tr>');
+        $('#table4 > tbody').append('<tr><td>'+"Pic de vitesse pince/transport (ms)"+'</td><td>'
+                                    +obj["CoordTransportPrehension_preh"].TpsPicVitPinceTransportMean_GV[0]+'</td><td>'
+                                    +obj["CoordTransportPrehension_preh"].TpsPicVitPinceTransportMean_GV[1]+'</td><td>'
+                                    +obj["CoordTransportPrehension_preh"].TpsPicVitPinceTransportMean_GV[2]+'</td><td>'
+                                    +obj["CoordTransportPrehension_preh"].TpsPicVitPinceTransportMean_GV[3]+'</td></tr>');
+        $('#table4 > tbody').append('<tr><td>'+'</td><td>'
+                                    +'+/-'+obj["CoordTransportPrehension_preh"].TpsPicVitPinceTransportMeanStd_GV[0]+'</td><td>'
+                                    +'+/-'+obj["CoordTransportPrehension_preh"].TpsPicVitPinceTransportMeanStd_GV[1]+'</td><td>'
+                                    +'+/-'+obj["CoordTransportPrehension_preh"].TpsPicVitPinceTransportMeanStd_GV[2]+'</td><td>'
+                                    +'+/-'+obj["CoordTransportPrehension_preh"].TpsPicVitPinceTransportMeanStd_GV[3]+'</td></tr>');
+
+        $('#table5 > tbody').append('<tr><td>'+"Z poignet"+'</td><td>'
+                                    +obj["CoordInterSegment_preh"].ZmaxPoignetMean_GV[0]+'</td><td>'
+                                    +obj["CoordInterSegment_preh"].ZmaxPoignetMean_GV[1]+'</td><td>'
+                                    +obj["CoordInterSegment_preh"].ZmaxPoignetMean_GV[2]+'</td><td>'
+                                    +obj["CoordInterSegment_preh"].ZmaxPoignetMean_GV[3]+'</td></tr>');
+        $('#table5 > tbody').append('<tr><td>'+'</td><td>'
+                                    +'+/-'+obj["CoordInterSegment_preh"].ZmaxPoignetMeanStd_GV[0]+'</td><td>'
+                                    +'+/-'+obj["CoordInterSegment_preh"].ZmaxPoignetMeanStd_GV[1]+'</td><td>'
+                                    +'+/-'+obj["CoordInterSegment_preh"].ZmaxPoignetMeanStd_GV[2]+'</td><td>'
+                                    +'+/-'+obj["CoordInterSegment_preh"].ZmaxPoignetMeanStd_GV[3]+'</td></tr>');
+        $('#table5 > tbody').append('<tr><td>'+"Z coude"+'</td><td>'
+                                    +obj["CoordInterSegment_preh"].ZmaxCoudeMean_GV[0]+'</td><td>'
+                                    +obj["CoordInterSegment_preh"].ZmaxCoudeMean_GV[1]+'</td><td>'
+                                    +obj["CoordInterSegment_preh"].ZmaxCoudeMean_GV[2]+'</td><td>'
+                                    +obj["CoordInterSegment_preh"].ZmaxCoudeMean_GV[3]+'</td></tr>');
+        $('#table5 > tbody').append('<tr><td>'+'</td><td>'
+                                    +'+/-'+obj["CoordInterSegment_preh"].ZmaxCoudeMeanStd_GV[0]+'</td><td>'
+                                    +'+/-'+obj["CoordInterSegment_preh"].ZmaxCoudeMeanStd_GV[1]+'</td><td>'
+                                    +'+/-'+obj["CoordInterSegment_preh"].ZmaxCoudeMeanStd_GV[2]+'</td><td>'
+                                    +'+/-'+obj["CoordInterSegment_preh"].ZmaxCoudeMeanStd_GV[3]+'</td></tr>');
+        $('#table5 > tbody').append('<tr><td>'+"Date d'ouverture maximale"+'</td><td>'
+                                    +obj["CoordInterSegment_preh"].TpsPicVitPoignetCoudeMean_GV[0]+'</td><td>'
+                                    +obj["CoordInterSegment_preh"].TpsPicVitPoignetCoudeMean_GV[1]+'</td><td>'
+                                    +obj["CoordInterSegment_preh"].TpsPicVitPoignetCoudeMean_GV[2]+'</td><td>'
+                                    +obj["CoordInterSegment_preh"].TpsPicVitPoignetCoudeMean_GV[3]+'</td></tr>');
+        $('#table5 > tbody').append('<tr><td>'+'</td><td>'
+                                    +'+/-'+obj["CoordInterSegment_preh"].TpsPicVitPoignetCoudeMeanStd_GV[0]+'</td><td>'
+                                    +'+/-'+obj["CoordInterSegment_preh"].TpsPicVitPoignetCoudeMeanStd_GV[1]+'</td><td>'
+                                    +'+/-'+obj["CoordInterSegment_preh"].TpsPicVitPoignetCoudeMeanStd_GV[2]+'</td><td>'
+                                    +'+/-'+obj["CoordInterSegment_preh"].TpsPicVitPoignetCoudeMeanStd_GV[3]+'</td></tr>');
+        
+        $('#table6 > tbody').append('<tr><td>'+"Nb de mouvements"+'</td><td>'
+                                    +obj["VitesseRep_PGD"].NbEssais[0]+'</td><td>'
+                                    +obj["VitesseRep_PGD"].NbEssais[1]+'</td><td>'
+                                    +obj["VitesseRep_PGD"].NbEssais[2]+'</td><td>'
+                                    +obj["VitesseRep_PGD"].NbEssais[3]+'</td></tr>');
+        $('#table6 > tbody').append('<tr><td>'+"Latence (ms)"+'</td><td>'
+                                    +obj["VitesseRep_PGD"].LatenceMvtMean[0]+'</td><td>'
+                                    +obj["VitesseRep_PGD"].LatenceMvtMean[1]+'</td><td>'
+                                    +obj["VitesseRep_PGD"].LatenceMvtMean[2]+'</td><td>'
+                                    +obj["VitesseRep_PGD"].LatenceMvtMean[3]+'</td></tr>');
+        $('#table6 > tbody').append('<tr><td>'+'</td><td>'
+                                    +'+/-'+obj["VitesseRep_PGD"].LatenceMvtMeanStd[0]+'</td><td>'
+                                    +'+/-'+obj["VitesseRep_PGD"].LatenceMvtMeanStd[1]+'</td><td>'
+                                    +'+/-'+obj["VitesseRep_PGD"].LatenceMvtMeanStd[2]+'</td><td>'
+                                    +'+/-'+obj["VitesseRep_PGD"].LatenceMvtMeanStd[3]+'</td></tr>');
+        $('#table6 > tbody').append('<tr><td>'+"Durée mouvements (ms)"+'</td><td>'
+                                    +obj["VitesseRep_PGD"].DureeMvtMean[0]+'</td><td>'
+                                    +obj["VitesseRep_PGD"].DureeMvtMean[1]+'</td><td>'
+                                    +obj["VitesseRep_PGD"].DureeMvtMean[2]+'</td><td>'
+                                    +obj["VitesseRep_PGD"].DureeMvtMean[3]+'</td></tr>');
+        $('#table6 > tbody').append('<tr><td>'+'</td><td>'
+                                    +'+/-'+obj["VitesseRep_PGD"].DureeMvtMeanStd[0]+'</td><td>'
+                                    +'+/-'+obj["VitesseRep_PGD"].DureeMvtMeanStd[1]+'</td><td>'
+                                    +'+/-'+obj["VitesseRep_PGD"].DureeMvtMeanStd[2]+'</td><td>'
+                                    +'+/-'+obj["VitesseRep_PGD"].DureeMvtMeanStd[3]+'</td></tr>');
+
+        $('#table7 > tbody').append('<tr><td>'+"Pic de vitesse (ms)"+'</td><td>'
+                                    +obj["TransportEtFluidite_PGD"].PicVitTgMean[0]+'</td><td>'
+                                    +obj["TransportEtFluidite_PGD"].PicVitTgMean[1]+'</td><td>'
+                                    +obj["TransportEtFluidite_PGD"].PicVitTgMean[2]+'</td><td>'
+                                    +obj["TransportEtFluidite_PGD"].PicVitTgMean[3]+'</td></tr>');
+        $('#table7 > tbody').append('<tr><td>'+'</td><td>'
+                                    +'+/-'+obj["TransportEtFluidite_PGD"].PicVitTgMeanStd[0]+'</td><td>'
+                                    +'+/-'+obj["TransportEtFluidite_PGD"].PicVitTgMeanStd[1]+'</td><td>'
+                                    +'+/-'+obj["TransportEtFluidite_PGD"].PicVitTgMeanStd[2]+'</td><td>'
+                                    +'+/-'+obj["TransportEtFluidite_PGD"].PicVitTgMeanStd[3]+'</td></tr>');
+        $('#table7 > tbody').append('<tr><td>'+"Latence du pic de vitesse (ms)"+'</td><td>'
+                                    +obj["TransportEtFluidite_PGD"].LatencePicVitTgMean[0]+'</td><td>'
+                                    +obj["TransportEtFluidite_PGD"].LatencePicVitTgMean[1]+'</td><td>'
+                                    +obj["TransportEtFluidite_PGD"].LatencePicVitTgMean[2]+'</td><td>'
+                                    +obj["TransportEtFluidite_PGD"].LatencePicVitTgMean[3]+'</td></tr>');
+        $('#table7 > tbody').append('<tr><td>'+'</td><td>'
+                                    +'+/-'+obj["TransportEtFluidite_PGD"].LatencePicVitTgMeanStd[0]+'</td><td>'
+                                    +'+/-'+obj["TransportEtFluidite_PGD"].LatencePicVitTgMeanStd[1]+'</td><td>'
+                                    +'+/-'+obj["TransportEtFluidite_PGD"].LatencePicVitTgMeanStd[2]+'</td><td>'
+                                    +'+/-'+obj["TransportEtFluidite_PGD"].LatencePicVitTgMeanStd[3]+'</td></tr>');
+
+
+        $('#table8 > tbody').append('<tr><td>'+"Z poignet"+'</td><td>'
+                                    +obj["CoordInterSegment_PGD"].ZmaxPoignetMean[0]+'</td><td>'
+                                    +obj["CoordInterSegment_PGD"].ZmaxPoignetMean[1]+'</td><td>'
+                                    +obj["CoordInterSegment_PGD"].ZmaxPoignetMean[2]+'</td><td>'
+                                    +obj["CoordInterSegment_PGD"].ZmaxPoignetMean[3]+'</td></tr>');
+        $('#table8 > tbody').append('<tr><td>'+'</td><td>'
+                                    +'+/-'+obj["CoordInterSegment_PGD"].ZmaxPoignetMeanStd[0]+'</td><td>'
+                                    +'+/-'+obj["CoordInterSegment_PGD"].ZmaxPoignetMeanStd[1]+'</td><td>'
+                                    +'+/-'+obj["CoordInterSegment_PGD"].ZmaxPoignetMeanStd[2]+'</td><td>'
+                                    +'+/-'+obj["CoordInterSegment_PGD"].ZmaxPoignetMeanStd[3]+'</td></tr>');
+        $('#table8 > tbody').append('<tr><td>'+"Z coude"+'</td><td>'
+                                    +obj["CoordInterSegment_PGD"].ZmaxCoudeMean[0]+'</td><td>'
+                                    +obj["CoordInterSegment_PGD"].ZmaxCoudeMean[1]+'</td><td>'
+                                    +obj["CoordInterSegment_PGD"].ZmaxCoudeMean[2]+'</td><td>'
+                                    +obj["CoordInterSegment_PGD"].ZmaxCoudeMean[3]+'</td></tr>');
+        $('#table8 > tbody').append('<tr><td>'+'</td><td>'
+                                    +'+/-'+obj["CoordInterSegment_PGD"].ZmaxCoudeMeanStd[0]+'</td><td>'
+                                    +'+/-'+obj["CoordInterSegment_PGD"].ZmaxCoudeMeanStd[1]+'</td><td>'
+                                    +'+/-'+obj["CoordInterSegment_PGD"].ZmaxCoudeMeanStd[2]+'</td><td>'
+                                    +'+/-'+obj["CoordInterSegment_PGD"].ZmaxCoudeMeanStd[3]+'</td></tr>');
+        $('#table8 > tbody').append('<tr><td>'+"Date pic vitesse poignet-coude"+'</td><td>'
+                                    +obj["CoordInterSegment_PGD"].TpsPicVitPoignetCoudeMean[0]+'</td><td>'
+                                    +obj["CoordInterSegment_PGD"].TpsPicVitPoignetCoudeMean[1]+'</td><td>'
+                                    +obj["CoordInterSegment_PGD"].TpsPicVitPoignetCoudeMean[2]+'</td><td>'
+                                    +obj["CoordInterSegment_PGD"].TpsPicVitPoignetCoudeMean[3]+'</td></tr>');
+        $('#table8 > tbody').append('<tr><td>'+'</td><td>'
+                                    +'+/-'+obj["CoordInterSegment_PGD"].TpsPicVitPoignetCoudeMeanStd[0]+'</td><td>'
+                                    +'+/-'+obj["CoordInterSegment_PGD"].TpsPicVitPoignetCoudeMeanStd[1]+'</td><td>'
+                                    +'+/-'+obj["CoordInterSegment_PGD"].TpsPicVitPoignetCoudeMeanStd[2]+'</td><td>'
+                                    +'+/-'+obj["CoordInterSegment_PGD"].TpsPicVitPoignetCoudeMeanStd[3]+'</td></tr>');
+
+        $('#table9 > tbody').append('<tr><td>'+"Erreur latérale (mm)"+'</td><td>'
+                                    +obj["PrecisionFinale_PGD"].PrecisionFinale_ErreurLaterale[0]+'</td><td>'
+                                    +obj["PrecisionFinale_PGD"].PrecisionFinale_ErreurLaterale[1]+'</td><td>'
+                                    +obj["PrecisionFinale_PGD"].PrecisionFinale_ErreurLaterale[2]+'</td><td>'
+                                    +obj["PrecisionFinale_PGD"].PrecisionFinale_ErreurLaterale[3]+'</td></tr>');
+        $('#table9 > tbody').append('<tr><td>'+"Erreur profondeur (mm)"+'</td><td>'
+                                    +obj["PrecisionFinale_PGD"].PrecisionFinale_ErreurProfondeur[0]+'</td><td>'
+                                    +obj["PrecisionFinale_PGD"].PrecisionFinale_ErreurProfondeur[1]+'</td><td>'
+                                    +obj["PrecisionFinale_PGD"].PrecisionFinale_ErreurProfondeur[2]+'</td><td>'
+                                    +obj["PrecisionFinale_PGD"].PrecisionFinale_ErreurProfondeur[3]+'</td></tr>');
+        $('#table9 > tbody').append('<tr><td>'+"Erreur en distance (mm)"+'</td><td>'
+                                    +obj["PrecisionFinale_PGD"].PrecisionFinale_ErreurDistance[0]+'</td><td>'
+                                    +obj["PrecisionFinale_PGD"].PrecisionFinale_ErreurDistance[1]+'</td><td>'
+                                    +obj["PrecisionFinale_PGD"].PrecisionFinale_ErreurDistance[2]+'</td><td>'
+                                    +obj["PrecisionFinale_PGD"].PrecisionFinale_ErreurDistance[3]+'</td></tr>');
+        $('#table9 > tbody').append('<tr><td>'+"Surface ellipse confiance (mm2)"+'</td><td>'
+                                    +obj["PrecisionFinale_PGD"].PrecisionFinale_Surface[0]+'</td><td>'
+                                    +obj["PrecisionFinale_PGD"].PrecisionFinale_Surface[1]+'</td><td>'
+                                    +obj["PrecisionFinale_PGD"].PrecisionFinale_Surface[2]+'</td><td>'
+                                    +obj["PrecisionFinale_PGD"].PrecisionFinale_Surface[3]+'</td></tr>');
+        $('#table9 > tbody').append('<tr><td>'+'</td><td>'
+                                    +'+/-'+obj["PrecisionFinale_PGD"].PrecisionFinale_Surface_erreur[0]+'</td><td>'
+                                    +'+/-'+obj["PrecisionFinale_PGD"].PrecisionFinale_Surface_erreur[1]+'</td><td>'
+                                    +'+/-'+obj["PrecisionFinale_PGD"].PrecisionFinale_Surface_erreur[2]+'</td><td>'
+                                    +'+/-'+obj["PrecisionFinale_PGD"].PrecisionFinale_Surface_erreur[3]+'</td></tr>');
+
+        $('#table10 > tbody').append('<tr><td>'+"Nb de mouvements"+'</td><td>'
+                                    +obj["VitesseRep_PML"].NbEssais[0]+'</td><td>'
+                                    +obj["VitesseRep_PML"].NbEssais[1]+'</td><td>'
+                                    +obj["VitesseRep_PML"].NbEssais[2]+'</td><td>'
+                                    +obj["VitesseRep_PML"].NbEssais[3]+'</td><td>'
+                                    +obj["VitesseRep_PML"].NbEssais[4]+'</td><td>'
+                                    +obj["VitesseRep_PML"].NbEssais[5]+'</td></tr>');
+        $('#table10 > tbody').append('<tr><td>'+"Latence (ms)"+'</td><td>'
+                                    +obj["VitesseRep_PML"].LatenceMvtMean[0]+'</td><td>'
+                                    +obj["VitesseRep_PML"].LatenceMvtMean[1]+'</td><td>'
+                                    +obj["VitesseRep_PML"].LatenceMvtMean[2]+'</td><td>'
+                                    +obj["VitesseRep_PML"].LatenceMvtMean[3]+'</td><td>'
+                                    +obj["VitesseRep_PML"].LatenceMvtMean[4]+'</td><td>'
+                                    +obj["VitesseRep_PML"].LatenceMvtMean[5]+'</td></tr>');
+        $('#table10 > tbody').append('<tr><td>'+'</td><td>'
+                                    +'+/-'+obj["VitesseRep_PML"].LatenceMvtMeanStd[0]+'</td><td>'
+                                    +'+/-'+obj["VitesseRep_PML"].LatenceMvtMeanStd[1]+'</td><td>'
+                                    +'+/-'+obj["VitesseRep_PML"].LatenceMvtMeanStd[2]+'</td><td>'
+                                    +'+/-'+obj["VitesseRep_PML"].LatenceMvtMeanStd[3]+'</td><td>'
+                                    +'+/-'+obj["VitesseRep_PML"].LatenceMvtMeanStd[4]+'</td><td>'
+                                    +'+/-'+obj["VitesseRep_PML"].LatenceMvtMeanStd[5]+'</td></tr>');
+        $('#table10 > tbody').append('<tr><td>'+"Durée mouvements (ms)"+'</td><td>'
+                                    +obj["VitesseRep_PML"].DureeMvtMean[0]+'</td><td>'
+                                    +obj["VitesseRep_PML"].DureeMvtMean[1]+'</td><td>'
+                                    +obj["VitesseRep_PML"].DureeMvtMean[2]+'</td><td>'
+                                    +obj["VitesseRep_PML"].DureeMvtMean[3]+'</td><td>'
+                                    +obj["VitesseRep_PML"].DureeMvtMean[4]+'</td><td>'
+                                    +obj["VitesseRep_PML"].DureeMvtMean[5]+'</td></tr>');
+        $('#table10 > tbody').append('<tr><td>'+'</td><td>'
+                                    +'+/-'+obj["VitesseRep_PML"].DureeMvtMeanStd[0]+'</td><td>'
+                                    +'+/-'+obj["VitesseRep_PML"].DureeMvtMeanStd[1]+'</td><td>'
+                                    +'+/-'+obj["VitesseRep_PML"].DureeMvtMeanStd[2]+'</td><td>'
+                                    +'+/-'+obj["VitesseRep_PML"].DureeMvtMeanStd[3]+'</td><td>'
+                                    +'+/-'+obj["VitesseRep_PML"].DureeMvtMeanStd[4]+'</td><td>'
+                                    +'+/-'+obj["VitesseRep_PML"].DureeMvtMeanStd[5]+'</td></tr>');
+
+        $('#table11 > tbody').append('<tr><td>'+"Pic de vitesse (ms)"+'</td><td>'
+                                    +obj["TransportEtFluidite_PML"].PicVitTgMean[0]+'</td><td>'
+                                    +obj["TransportEtFluidite_PML"].PicVitTgMean[1]+'</td><td>'
+                                    +obj["TransportEtFluidite_PML"].PicVitTgMean[2]+'</td><td>'
+                                    +obj["TransportEtFluidite_PML"].PicVitTgMean[3]+'</td><td>'
+                                    +obj["TransportEtFluidite_PML"].PicVitTgMean[4]+'</td><td>'
+                                    +obj["TransportEtFluidite_PML"].PicVitTgMean[5]+'</td></tr>');
+        $('#table11 > tbody').append('<tr><td>'+'</td><td>'
+                                    +'+/-'+obj["TransportEtFluidite_PML"].PicVitTgMeanStd[0]+'</td><td>'
+                                    +'+/-'+obj["TransportEtFluidite_PML"].PicVitTgMeanStd[1]+'</td><td>'
+                                    +'+/-'+obj["TransportEtFluidite_PML"].PicVitTgMeanStd[2]+'</td><td>'
+                                    +'+/-'+obj["TransportEtFluidite_PML"].PicVitTgMeanStd[3]+'</td><td>'
+                                    +'+/-'+obj["TransportEtFluidite_PML"].PicVitTgMeanStd[4]+'</td><td>'
+                                    +'+/-'+obj["TransportEtFluidite_PML"].PicVitTgMeanStd[5]+'</td></tr>');
+        $('#table11 > tbody').append('<tr><td>'+"Latence du pic de vitesse (ms)"+'</td><td>'
+                                    +obj["TransportEtFluidite_PML"].LatencePicVitTgMean[0]+'</td><td>'
+                                    +obj["TransportEtFluidite_PML"].LatencePicVitTgMean[1]+'</td><td>'
+                                    +obj["TransportEtFluidite_PML"].LatencePicVitTgMean[2]+'</td><td>'
+                                    +obj["TransportEtFluidite_PML"].LatencePicVitTgMean[3]+'</td><td>'
+                                    +obj["TransportEtFluidite_PML"].LatencePicVitTgMean[4]+'</td><td>'
+                                    +obj["TransportEtFluidite_PML"].LatencePicVitTgMean[5]+'</td></tr>');
+        $('#table11 > tbody').append('<tr><td>'+'</td><td>'
+                                    +'+/-'+obj["TransportEtFluidite_PML"].LatencePicVitTgMeanStd[0]+'</td><td>'
+                                    +'+/-'+obj["TransportEtFluidite_PML"].LatencePicVitTgMeanStd[1]+'</td><td>'
+                                    +'+/-'+obj["TransportEtFluidite_PML"].LatencePicVitTgMeanStd[2]+'</td><td>'
+                                    +'+/-'+obj["TransportEtFluidite_PML"].LatencePicVitTgMeanStd[3]+'</td><td>'
+                                    +'+/-'+obj["TransportEtFluidite_PML"].LatencePicVitTgMeanStd[4]+'</td><td>'
+                                    +'+/-'+obj["TransportEtFluidite_PML"].LatencePicVitTgMeanStd[5]+'</td></tr>');
+
+        $('#table12 > tbody').append('<tr><td>'+"Z poignet"+'</td><td>'
+                                    +obj["CoordInterSegment_PML"].ZmaxPoignetMean[0]+'</td><td>'
+                                    +obj["CoordInterSegment_PML"].ZmaxPoignetMean[1]+'</td><td>'
+                                    +obj["CoordInterSegment_PML"].ZmaxPoignetMean[2]+'</td><td>'
+                                    +obj["CoordInterSegment_PML"].ZmaxPoignetMean[3]+'</td><td>'
+                                    +obj["CoordInterSegment_PML"].ZmaxPoignetMean[4]+'</td><td>'
+                                    +obj["CoordInterSegment_PML"].ZmaxPoignetMean[5]+'</td></tr>');
+        $('#table12 > tbody').append('<tr><td>'+'</td><td>'
+                                    +'+/-'+obj["CoordInterSegment_PML"].ZmaxPoignetMeanStd[0]+'</td><td>'
+                                    +'+/-'+obj["CoordInterSegment_PML"].ZmaxPoignetMeanStd[1]+'</td><td>'
+                                    +'+/-'+obj["CoordInterSegment_PML"].ZmaxPoignetMeanStd[2]+'</td><td>'
+                                    +'+/-'+obj["CoordInterSegment_PML"].ZmaxPoignetMeanStd[3]+'</td><td>'
+                                    +'+/-'+obj["CoordInterSegment_PML"].ZmaxPoignetMeanStd[4]+'</td><td>'
+                                    +'+/-'+obj["CoordInterSegment_PML"].ZmaxPoignetMeanStd[5]+'</td></tr>');
+        $('#table12 > tbody').append('<tr><td>'+"Z coude"+'</td><td>'
+                                    +obj["CoordInterSegment_PML"].ZmaxCoudeMean[0]+'</td><td>'
+                                    +obj["CoordInterSegment_PML"].ZmaxCoudeMean[1]+'</td><td>'
+                                    +obj["CoordInterSegment_PML"].ZmaxCoudeMean[2]+'</td><td>'
+                                    +obj["CoordInterSegment_PML"].ZmaxCoudeMean[3]+'</td><td>'
+                                    +obj["CoordInterSegment_PML"].ZmaxCoudeMean[4]+'</td><td>'
+                                    +obj["CoordInterSegment_PML"].ZmaxCoudeMean[5]+'</td></tr>');
+        $('#table12 > tbody').append('<tr><td>'+'</td><td>'
+                                    +'+/-'+obj["CoordInterSegment_PML"].ZmaxCoudeMeanStd[0]+'</td><td>'
+                                    +'+/-'+obj["CoordInterSegment_PML"].ZmaxCoudeMeanStd[1]+'</td><td>'
+                                    +'+/-'+obj["CoordInterSegment_PML"].ZmaxCoudeMeanStd[2]+'</td><td>'
+                                    +'+/-'+obj["CoordInterSegment_PML"].ZmaxCoudeMeanStd[3]+'</td><td>'
+                                    +'+/-'+obj["CoordInterSegment_PML"].ZmaxCoudeMeanStd[4]+'</td><td>'
+                                    +'+/-'+obj["CoordInterSegment_PML"].ZmaxCoudeMeanStd[5]+'</td></tr>');
+        $('#table12 > tbody').append('<tr><td>'+"Date pic vitesse poignet-coude"+'</td><td>'
+                                    +obj["CoordInterSegment_PML"].TpsPicVitPoignetCoudeMean[0]+'</td><td>'
+                                    +obj["CoordInterSegment_PML"].TpsPicVitPoignetCoudeMean[1]+'</td><td>'
+                                    +obj["CoordInterSegment_PML"].TpsPicVitPoignetCoudeMean[2]+'</td><td>'
+                                    +obj["CoordInterSegment_PML"].TpsPicVitPoignetCoudeMean[3]+'</td><td>'
+                                    +obj["CoordInterSegment_PML"].TpsPicVitPoignetCoudeMean[4]+'</td><td>'
+                                    +obj["CoordInterSegment_PML"].TpsPicVitPoignetCoudeMean[5]+'</td></tr>');
+        $('#table12 > tbody').append('<tr><td>'+'</td><td>'
+                                    +'+/-'+obj["CoordInterSegment_PML"].TpsPicVitPoignetCoudeMeanStd[0]+'</td><td>'
+                                    +'+/-'+obj["CoordInterSegment_PML"].TpsPicVitPoignetCoudeMeanStd[1]+'</td><td>'
+                                    +'+/-'+obj["CoordInterSegment_PML"].TpsPicVitPoignetCoudeMeanStd[2]+'</td><td>'
+                                    +'+/-'+obj["CoordInterSegment_PML"].TpsPicVitPoignetCoudeMeanStd[3]+'</td><td>'
+                                    +'+/-'+obj["CoordInterSegment_PML"].TpsPicVitPoignetCoudeMeanStd[4]+'</td><td>'
+                                    +'+/-'+obj["CoordInterSegment_PML"].TpsPicVitPoignetCoudeMeanStd[5]+'</td></tr>');
+
+        $('#table13 > tbody').append('<tr><td>'+"Erreur latérale (mm)"+'</td><td>'
+                                    +obj["PrecisionFinale_PML"].PrecisionFinale_ErreurLaterale[0]+'</td><td>'
+                                    +obj["PrecisionFinale_PML"].PrecisionFinale_ErreurLaterale[1]+'</td><td>'
+                                    +obj["PrecisionFinale_PML"].PrecisionFinale_ErreurLaterale[2]+'</td><td>'
+                                    +obj["PrecisionFinale_PML"].PrecisionFinale_ErreurLaterale[3]+'</td><td>'
+                                    +obj["PrecisionFinale_PML"].PrecisionFinale_ErreurLaterale[4]+'</td><td>'
+                                    +obj["PrecisionFinale_PML"].PrecisionFinale_ErreurLaterale[5]+'</td></tr>');
+        $('#table13 > tbody').append('<tr><td>'+"Erreur profondeur (mm)"+'</td><td>'
+                                    +obj["PrecisionFinale_PML"].PrecisionFinale_ErreurProfondeur[0]+'</td><td>'
+                                    +obj["PrecisionFinale_PML"].PrecisionFinale_ErreurProfondeur[1]+'</td><td>'
+                                    +obj["PrecisionFinale_PML"].PrecisionFinale_ErreurProfondeur[2]+'</td><td>'
+                                    +obj["PrecisionFinale_PML"].PrecisionFinale_ErreurProfondeur[3]+'</td><td>'
+                                    +obj["PrecisionFinale_PML"].PrecisionFinale_ErreurProfondeur[4]+'</td><td>'
+                                    +obj["PrecisionFinale_PML"].PrecisionFinale_ErreurProfondeur[5]+'</td></tr>');
+        $('#table13 > tbody').append('<tr><td>'+"Erreur en distance (mm)"+'</td><td>'
+                                    +obj["PrecisionFinale_PML"].PrecisionFinale_ErreurDistance[0]+'</td><td>'
+                                    +obj["PrecisionFinale_PML"].PrecisionFinale_ErreurDistance[1]+'</td><td>'
+                                    +obj["PrecisionFinale_PML"].PrecisionFinale_ErreurDistance[2]+'</td><td>'
+                                    +obj["PrecisionFinale_PML"].PrecisionFinale_ErreurDistance[3]+'</td><td>'
+                                    +obj["PrecisionFinale_PML"].PrecisionFinale_ErreurDistance[4]+'</td><td>'
+                                    +obj["PrecisionFinale_PML"].PrecisionFinale_ErreurDistance[5]+'</td></tr>');
+        $('#table13 > tbody').append('<tr><td>'+"Surface ellipse confiance (mm2)"+'</td><td>'
+                                    +obj["PrecisionFinale_PML"].PrecisionFinale_Surface[0]+'</td><td>'
+                                    +obj["PrecisionFinale_PML"].PrecisionFinale_Surface[1]+'</td><td>'
+                                    +obj["PrecisionFinale_PML"].PrecisionFinale_Surface[2]+'</td><td>'
+                                    +obj["PrecisionFinale_PML"].PrecisionFinale_Surface[3]+'</td><td>'
+                                    +obj["PrecisionFinale_PML"].PrecisionFinale_Surface[4]+'</td><td>'
+                                    +obj["PrecisionFinale_PML"].PrecisionFinale_Surface[5]+'</td></tr>');
+        $('#table13 > tbody').append('<tr><td>'+'</td><td>'
+                                    +'+/-'+obj["PrecisionFinale_PML"].PrecisionFinale_Surface_erreur[0]+'</td><td>'
+                                    +'+/-'+obj["PrecisionFinale_PML"].PrecisionFinale_Surface_erreur[1]+'</td><td>'
+                                    +'+/-'+obj["PrecisionFinale_PML"].PrecisionFinale_Surface_erreur[2]+'</td><td>'
+                                    +'+/-'+obj["PrecisionFinale_PML"].PrecisionFinale_Surface_erreur[3]+'</td><td>'
+                                    +'+/-'+obj["PrecisionFinale_PML"].PrecisionFinale_Surface_erreur[4]+'</td><td>'
+                                    +'+/-'+obj["PrecisionFinale_PML"].PrecisionFinale_Surface_erreur[5]+'</td></tr>');
+
     };
 
     reader.readAsText(input.files[0]);
@@ -156,7 +502,64 @@ function demoFromHTML() {
     document.getElementById("temp15").innerHTML="<p class='not_bold'>" +document.getElementById("temp15").value+"</p>";
     document.getElementById("temp16").innerHTML="<p class='not_bold'>" +document.getElementById("temp16").value+"</p>";
 
+    document.getElementById("temp17").innerHTML="<p class='not_bold'>" +document.getElementById("temp17").value+"</p>";
+    document.getElementById("temp18").innerHTML="<p class='not_bold'>" +document.getElementById("temp18").value+"</p>";
+    document.getElementById("temp19").innerHTML="<p class='not_bold'>" +document.getElementById("temp19").value+"</p>";
+    document.getElementById("temp20").innerHTML="<p class='not_bold'>" +document.getElementById("temp20").value+"</p>";
 
+    document.getElementById("temp21").innerHTML="<p class='not_bold'>" +document.getElementById("temp21").value+"</p>";
+    document.getElementById("temp22").innerHTML="<p class='not_bold'>" +document.getElementById("temp22").value+"</p>";
+    document.getElementById("temp23").innerHTML="<p class='not_bold'>" +document.getElementById("temp23").value+"</p>";
+    document.getElementById("temp24").innerHTML="<p class='not_bold'>" +document.getElementById("temp24").value+"</p>";
+
+    document.getElementById("temp25").innerHTML="<p class='not_bold'>" +document.getElementById("temp25").value+"</p>";
+    document.getElementById("temp26").innerHTML="<p class='not_bold'>" +document.getElementById("temp26").value+"</p>";
+    document.getElementById("temp27").innerHTML="<p class='not_bold'>" +document.getElementById("temp27").value+"</p>";
+    document.getElementById("temp28").innerHTML="<p class='not_bold'>" +document.getElementById("temp28").value+"</p>";
+
+    document.getElementById("temp29").innerHTML="<p class='not_bold'>" +document.getElementById("temp29").value+"</p>";
+    document.getElementById("temp30").innerHTML="<p class='not_bold'>" +document.getElementById("temp30").value+"</p>";
+    document.getElementById("temp31").innerHTML="<p class='not_bold'>" +document.getElementById("temp31").value+"</p>";
+    document.getElementById("temp32").innerHTML="<p class='not_bold'>" +document.getElementById("temp32").value+"</p>";
+
+    document.getElementById("temp33").innerHTML="<p class='not_bold'>" +document.getElementById("temp33").value+"</p>";
+    document.getElementById("temp34").innerHTML="<p class='not_bold'>" +document.getElementById("temp34").value+"</p>";
+    document.getElementById("temp35").innerHTML="<p class='not_bold'>" +document.getElementById("temp35").value+"</p>";
+    document.getElementById("temp36").innerHTML="<p class='not_bold'>" +document.getElementById("temp36").value+"</p>";
+
+    document.getElementById("temp37").innerHTML="<p class='not_bold'>" +document.getElementById("temp37").value+"</p>";
+    document.getElementById("temp38").innerHTML="<p class='not_bold'>" +document.getElementById("temp38").value+"</p>";
+    document.getElementById("temp39").innerHTML="<p class='not_bold'>" +document.getElementById("temp39").value+"</p>";
+    document.getElementById("temp40").innerHTML="<p class='not_bold'>" +document.getElementById("temp40").value+"</p>";
+
+    document.getElementById("temp41").innerHTML="<p class='not_bold'>" +document.getElementById("temp41").value+"</p>";
+    document.getElementById("temp42").innerHTML="<p class='not_bold'>" +document.getElementById("temp42").value+"</p>";
+    document.getElementById("temp43").innerHTML="<p class='not_bold'>" +document.getElementById("temp43").value+"</p>";
+    document.getElementById("temp44").innerHTML="<p class='not_bold'>" +document.getElementById("temp44").value+"</p>";
+    document.getElementById("temp45").innerHTML="<p class='not_bold'>" +document.getElementById("temp45").value+"</p>";
+    document.getElementById("temp46").innerHTML="<p class='not_bold'>" +document.getElementById("temp46").value+"</p>";
+
+    document.getElementById("temp47").innerHTML="<p class='not_bold'>" +document.getElementById("temp47").value+"</p>";
+    document.getElementById("temp48").innerHTML="<p class='not_bold'>" +document.getElementById("temp48").value+"</p>";
+    document.getElementById("temp49").innerHTML="<p class='not_bold'>" +document.getElementById("temp49").value+"</p>";
+    document.getElementById("temp50").innerHTML="<p class='not_bold'>" +document.getElementById("temp50").value+"</p>";
+    document.getElementById("temp51").innerHTML="<p class='not_bold'>" +document.getElementById("temp51").value+"</p>";
+    document.getElementById("temp52").innerHTML="<p class='not_bold'>" +document.getElementById("temp52").value+"</p>";
+
+    document.getElementById("temp53").innerHTML="<p class='not_bold'>" +document.getElementById("temp53").value+"</p>";
+    document.getElementById("temp54").innerHTML="<p class='not_bold'>" +document.getElementById("temp54").value+"</p>";
+    document.getElementById("temp55").innerHTML="<p class='not_bold'>" +document.getElementById("temp55").value+"</p>";
+    document.getElementById("temp56").innerHTML="<p class='not_bold'>" +document.getElementById("temp56").value+"</p>";
+    document.getElementById("temp57").innerHTML="<p class='not_bold'>" +document.getElementById("temp57").value+"</p>";
+    document.getElementById("temp58").innerHTML="<p class='not_bold'>" +document.getElementById("temp58").value+"</p>";
+
+    document.getElementById("temp59").innerHTML="<p class='not_bold'>" +document.getElementById("temp59").value+"</p>";
+    document.getElementById("temp60").innerHTML="<p class='not_bold'>" +document.getElementById("temp60").value+"</p>";
+    document.getElementById("temp61").innerHTML="<p class='not_bold'>" +document.getElementById("temp61").value+"</p>";
+    document.getElementById("temp62").innerHTML="<p class='not_bold'>" +document.getElementById("temp62").value+"</p>";
+    document.getElementById("temp63").innerHTML="<p class='not_bold'>" +document.getElementById("temp63").value+"</p>";
+    document.getElementById("temp64").innerHTML="<p class='not_bold'>" +document.getElementById("temp64").value+"</p>";
+    
     // ------------------------------------------------------------------------------- //
     
     // we support special element handlers. Register them with jQuery-style 
@@ -190,7 +593,7 @@ function demoFromHTML() {
     function (dispose) {
         // dispose: object with X, Y of the last line add to the PDF 
         //          this allow the insertion of new lines after html
-        pdf.save('Test.pdf');
+        pdf.save('Report_Handimain.pdf');
     }, margins);
 
 }
@@ -275,7 +678,7 @@ function demoFromHTML() {
     </h4>
 
     <div>
-        <p><input id='#table1' type="file" name="myFiles" onchange="JSONopenFile(event);"></p>
+        <p><input id='#table1' type="file" alt="file.json" name="myFiles" onchange="JSONopenFile(event);"></p>
         <table id="table1" src="#">
             <thead>
                 <tr>
@@ -334,18 +737,86 @@ function demoFromHTML() {
         </table>
     </div>
 
+
+
     <h4 class = 'bottom_space'>
         <center> Formation de la pince manuelle: </center>
     </h4>
+
+    <div>
+        <table id="table3" src="#">
+            <thead>
+                <tr>
+                    <th width='20%'></th>
+                    <th width='20%'>Main G à G</th>
+                    <th width='20%'>Main G à D</th>
+                    <th width='20%'>Main D à G</th>
+                    <th width='20%'>Main D à D</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td>Profil d'ouverture</td>
+                    <td><p><input type="text" id="temp17" style='font-weight:normal' autocomplete="off"></p></td>
+                    <td><p><input type="text" id="temp18" style='font-weight:normal' autocomplete="off"></p></td>
+                    <td><p><input type="text" id="temp19" style='font-weight:normal' autocomplete="off"></p></td>
+                    <td><p><input type="text" id="temp20" style='font-weight:normal' autocomplete="off"></p></td></tr>
+                <tr><td>Variabilité</td>
+                    <td><p><input type="text" id="temp21" style='font-weight:normal' autocomplete="off"></p></td>
+                    <td><p><input type="text" id="temp22" style='font-weight:normal' autocomplete="off"></p></td>
+                    <td><p><input type="text" id="temp23" style='font-weight:normal' autocomplete="off"></p></td>
+                    <td><p><input type="text" id="temp24" style='font-weight:normal' autocomplete="off"></p></td></tr>    
+            </tbody>
+        </table>
+    </div>
+
+
+
+
     <h4 class = 'bottom_space'>
         <center> Coordination transport/préhension: </center>
     </h4>
+    <div>
+        <table id="table4" src="#">
+            <thead>
+                <tr>
+                    <th width='20%'></th>
+                    <th width='20%'>Main G à G</th>
+                    <th width='20%'>Main G à D</th>
+                    <th width='20%'>Main D à G</th>
+                    <th width='20%'>Main D à D</th>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+    </div>
+
+
+
+
     <h4 class = 'bottom_space'>
         <center> Coordination inter-segmentaire: </center>
-    </h4>    
+    </h4>
+    <div>
+        <table id="table5" src="#">
+            <thead>
+                <tr>
+                    <th width='20%'></th>
+                    <th width='20%'>Main G à G</th>
+                    <th width='20%'>Main G à D</th>
+                    <th width='20%'>Main D à G</th>
+                    <th width='20%'>Main D à D</th>
+                </tr>
+            </thead>
+            <tbody>    
+            </tbody>
+        </table>
+    </div>
+    
+    
     <div>
         <p><input id='#image1' type="file" name="myFiles" onchange="ImageInput('#image1');"></p>
-        <img id="image1" src="#" alt="Image 1"/>
+        <img id="image1" src="#" alt="prehension.jpg"/>
     </div>
 
 <!-- --------------------------------------------------------------------- -->
@@ -358,19 +829,104 @@ function demoFromHTML() {
     <h4 class = 'bottom_space'>
         <center> Vitesse des réponses: </center>
     </h4>
+    <div>
+        <table id="table6" src="#">
+            <thead>
+                <tr>
+                    <th width='20%'></th>
+                    <th width='20%'>Main G à G</th>
+                    <th width='20%'>Main G à D</th>
+                    <th width='20%'>Main D à G</th>
+                    <th width='20%'>Main D à D</th>
+                </tr>
+            </thead>
+            <tbody>    
+            </tbody>
+        </table>
+    </div>
+
     <h4 class = 'bottom_space'>
         <center> Transport et fluidité motrice: </center>
     </h4>
+    <div>
+        <table id="table7" src="#">
+            <thead>
+                <tr>
+                    <th width='20%'></th>
+                    <th width='20%'>Main G à G</th>
+                    <th width='20%'>Main G à D</th>
+                    <th width='20%'>Main D à G</th>
+                    <th width='20%'>Main D à D</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td>Formation des trajectoires</td>
+                    <td><p><input type="text" id="temp25" style='font-weight:normal' autocomplete="off"></p></td>
+                    <td><p><input type="text" id="temp26" style='font-weight:normal' autocomplete="off"></p></td>
+                    <td><p><input type="text" id="temp27" style='font-weight:normal' autocomplete="off"></p></td>
+                    <td><p><input type="text" id="temp28" style='font-weight:normal' autocomplete="off"></p></td></tr>
+                <tr><td>Variabilité des trajectoires</td>
+                    <td><p><input type="text" id="temp29" style='font-weight:normal' autocomplete="off"></p></td>
+                    <td><p><input type="text" id="temp30" style='font-weight:normal' autocomplete="off"></p></td>
+                    <td><p><input type="text" id="temp31" style='font-weight:normal' autocomplete="off"></p></td>
+                    <td><p><input type="text" id="temp32" style='font-weight:normal' autocomplete="off"></p></td></tr>
+                <tr><td>Nombre de pics de vitesse</td>
+                    <td><p><input type="text" id="temp33" style='font-weight:normal' autocomplete="off"></p></td>
+                    <td><p><input type="text" id="temp34" style='font-weight:normal' autocomplete="off"></p></td>
+                    <td><p><input type="text" id="temp35" style='font-weight:normal' autocomplete="off"></p></td>
+                    <td><p><input type="text" id="temp36" style='font-weight:normal' autocomplete="off"></p></td></tr>
+                <tr><td>Profil d'accélération</td>
+                    <td><p><input type="text" id="temp37" style='font-weight:normal' autocomplete="off"></p></td>
+                    <td><p><input type="text" id="temp38" style='font-weight:normal' autocomplete="off"></p></td>
+                    <td><p><input type="text" id="temp39" style='font-weight:normal' autocomplete="off"></p></td>
+                    <td><p><input type="text" id="temp40" style='font-weight:normal' autocomplete="off"></p></td></tr>         
+            </tbody>
+        </table>
+    </div>
+
+
     <h4 class = 'bottom_space'>
         <center> Coordination inter-segmentaire: </center>
     </h4>    
+    <div>
+        <table id="table8" src="#">
+            <thead>
+                <tr>
+                    <th width='20%'></th>
+                    <th width='20%'>Main G à G</th>
+                    <th width='20%'>Main G à D</th>
+                    <th width='20%'>Main D à G</th>
+                    <th width='20%'>Main D à D</th>
+                </tr>
+            </thead>
+            <tbody>    
+            </tbody>
+        </table>
+    </div>
+
+
     <h4 class = 'bottom_space'>
         <center> Précision finale: </center>
     </h4>    
-
+    <div>
+        <table id="table9" src="#">
+            <thead>
+                <tr>
+                    <th width='20%'></th>
+                    <th width='20%'>Main G à G</th>
+                    <th width='20%'>Main G à D</th>
+                    <th width='20%'>Main D à G</th>
+                    <th width='20%'>Main D à D</th>
+                </tr>
+            </thead>
+            <tbody>    
+            </tbody>
+        </table>
+    </div>
+    
     <div>
         <p><input id='#image2' type="file" name="myFiles" onchange="ImageInput('#image2');"></p>
-        <img id="image2" src="#" alt="Image 2"/>
+        <img id="image2" src="#" alt="pointage_GD.jpg"/>
     </div>
 
 <!-- --------------------------------------------------------------------- -->
@@ -383,19 +939,121 @@ function demoFromHTML() {
     <h4 class = 'bottom_space'>
         <center> Vitesse des réponses: </center>
     </h4>
+    <div>
+        <table id="table10" src="#">
+            <thead>
+                <tr>
+                    <th width='14%'></th>
+                    <th width='14%'>Main G cible P</th>
+                    <th width='14%'>Main G cible M</th>
+                    <th width='14%'>Main G cible L</th>
+                    <th width='14%'>Main D cible P</th>
+                    <th width='14%'>Main D cible M</th>
+                    <th width='14%'>Main D cible L</th>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+    </div>
+
+
     <h4 class = 'bottom_space'>
         <center> Transport et fluidité motrice: </center>
     </h4>
+    <div>
+        <table id="table11" src="#">
+            <thead>
+                <tr>
+                    <th width='14%'></th>
+                    <th width='14%'>Main G cible P</th>
+                    <th width='14%'>Main G cible M</th>
+                    <th width='14%'>Main G cible L</th>
+                    <th width='14%'>Main D cible P</th>
+                    <th width='14%'>Main D cible M</th>
+                    <th width='14%'>Main D cible L</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td>Formation des trajectoires</td>
+                    <td><p><input type="text" id="temp41" style='font-weight:normal' autocomplete="off"></p></td>
+                    <td><p><input type="text" id="temp42" style='font-weight:normal' autocomplete="off"></p></td>
+                    <td><p><input type="text" id="temp43" style='font-weight:normal' autocomplete="off"></p></td>
+                    <td><p><input type="text" id="temp44" style='font-weight:normal' autocomplete="off"></p></td>
+                    <td><p><input type="text" id="temp45" style='font-weight:normal' autocomplete="off"></p></td>
+                    <td><p><input type="text" id="temp46" style='font-weight:normal' autocomplete="off"></p></td></tr>
+                <tr><td>Variabilité des trajectoires</td>
+                    <td><p><input type="text" id="temp47" style='font-weight:normal' autocomplete="off"></p></td>
+                    <td><p><input type="text" id="temp48" style='font-weight:normal' autocomplete="off"></p></td>
+                    <td><p><input type="text" id="temp49" style='font-weight:normal' autocomplete="off"></p></td>
+                    <td><p><input type="text" id="temp50" style='font-weight:normal' autocomplete="off"></p></td>
+                    <td><p><input type="text" id="temp51" style='font-weight:normal' autocomplete="off"></p></td>
+                    <td><p><input type="text" id="temp52" style='font-weight:normal' autocomplete="off"></p></td></tr>
+                <tr><td>Nombre de pics de vitesse</td>
+                    <td><p><input type="text" id="temp53" style='font-weight:normal' autocomplete="off"></p></td>
+                    <td><p><input type="text" id="temp54" style='font-weight:normal' autocomplete="off"></p></td>
+                    <td><p><input type="text" id="temp55" style='font-weight:normal' autocomplete="off"></p></td>
+                    <td><p><input type="text" id="temp56" style='font-weight:normal' autocomplete="off"></p></td>
+                    <td><p><input type="text" id="temp57" style='font-weight:normal' autocomplete="off"></p></td>
+                    <td><p><input type="text" id="temp58" style='font-weight:normal' autocomplete="off"></p></td></tr>         
+                <tr><td>Profil d'accélération</td>
+                    <td><p><input type="text" id="temp59" style='font-weight:normal' autocomplete="off"></p></td>
+                    <td><p><input type="text" id="temp60" style='font-weight:normal' autocomplete="off"></p></td>
+                    <td><p><input type="text" id="temp61" style='font-weight:normal' autocomplete="off"></p></td>
+                    <td><p><input type="text" id="temp62" style='font-weight:normal' autocomplete="off"></p></td>
+                    <td><p><input type="text" id="temp63" style='font-weight:normal' autocomplete="off"></p></td>
+                    <td><p><input type="text" id="temp64" style='font-weight:normal' autocomplete="off"></p></td></tr>
+            </tbody>
+        </table>
+    </div>
+
     <h4 class = 'bottom_space'>
         <center> Coordination inter-segmentaire: </center>
     </h4>    
+    <div>
+        <table id="table12" src="#">
+            <thead>
+                <tr>
+                    <th width='14%'></th>
+                    <th width='14%'>Main G cible P</th>
+                    <th width='14%'>Main G cible M</th>
+                    <th width='14%'>Main G cible L</th>
+                    <th width='14%'>Main D cible P</th>
+                    <th width='14%'>Main D cible M</th>
+                    <th width='14%'>Main D cible L</th>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+    </div>
+
+
     <h4 class = 'bottom_space'>
         <center> Précision finale: </center>
     </h4>    
-
+    <div>
+        <table id="table13" src="#">
+            <thead>
+                <tr>
+                    <th width='14%'></th>
+                    <th width='14%'>Main G cible P</th>
+                    <th width='14%'>Main G cible M</th>
+                    <th width='14%'>Main G cible L</th>
+                    <th width='14%'>Main D cible P</th>
+                    <th width='14%'>Main D cible M</th>
+                    <th width='14%'>Main D cible L</th>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+    </div>
+    
+    
     <div>
         <p><input id='#image3' type="file" name="myFiles" onchange="ImageInput('#image3');"></p>
-        <img id="image3" src="#" alt="Image 3"/>
+        <img id="image3" src="#" alt="pointage_PML.jpg"/>
     </div>
     
     <div>
